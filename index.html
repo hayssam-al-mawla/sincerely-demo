@@ -6,6 +6,15 @@
 <title>Sincerely | An institute for human inquiry, leadership and transformation</title>
 <meta name="description" content="Sincerely is an institute for human inquiry, leadership and transformation, founded by Katherine Dudtschak.">
 <meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sincerely">
+<meta property="og:title" content="Sincerely | An institute for human inquiry, leadership and transformation">
+<meta property="og:description" content="Sincerely is an institute for human inquiry, leadership and transformation, founded by Katherine Dudtschak.">
+<meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3A2F4E">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,22 +22,23 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to the page content</a>
 <p class="topnote">Concept preview of a new website for Sincerely. The live site is <a href="https://sincerelyinc.com/">sincerelyinc.com</a>.</p>
 <header class="site-header">
   <div class="wrap site-header__row">
     <a class="brand" href="index.html" aria-label="Sincerely, home"><img src="assets/img/logo-rose.png" alt="Sincerely" width="590" height="126"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="experience.html">Experience</a>
-      <a href="human.html">Sincerely Human</a>
-      <a href="work.html">Work with Sincerely</a>
-      <a href="foundation.html">Foundation</a>
-      <a href="katherine.html">Katherine</a>
+      <div class="nav__item"><a class="nav__link" href="experience.html">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="experience.html#table">Salons and gatherings</a></div></div>
+      <a class="nav__link" href="human.html">Sincerely Human</a>
+      <div class="nav__item"><a class="nav__link" href="work.html">Work with Sincerely</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Work with Sincerely menu"></button><div class="nav__menu"><a href="work.html#dialogue">Sincerely Dialogue</a><a href="speaking.html">Speaking</a><a href="work.html#learning">The learning series</a><a href="work.html#advisory">Sincerely Advisory</a></div></div>
+      <a class="nav__link" href="foundation.html">Foundation</a>
+      <a class="nav__link" href="katherine.html">Katherine</a>
       <a class="btn" href="work.html#conversation">Begin a conversation</a>
     </nav>
   </div>
 </header>
-<main>
+<main id="main">
 <section class="hero">
   <div class="wrap hero__grid">
     <div>
@@ -39,15 +49,34 @@
       <p class="hero__lede">An institute for human inquiry, leadership and transformation.</p>
       <p class="hero__mission">Founded by Katherine Dudtschak to unlock human potential in service of a harmonious and sustainable world.</p>
       <div class="actions">
-        <a class="btn" href="experience.html#show">Listen to the show</a>
+        <a class="btn" href="show.html">Listen to the show</a>
         <a class="btn btn--line" href="work.html">Work with Sincerely</a>
       </div>
+      <ul class="platforms" aria-label="Follow Sincerely">
+        <li><a href="https://open.spotify.com/show/4gPeUQifKM5hwZBMWNEckZ">Spotify</a></li>
+        <li><a href="https://podcasts.apple.com/us/podcast/the-sincerely-show/id1896789151">Apple Podcasts</a></li>
+        <li><a href="https://www.youtube.com/@Sincerelyinc">YouTube</a></li>
+        <li><a href="https://www.instagram.com/kdudtschak/">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/katherine-dudtschak-icd-d-7673a036/">LinkedIn</a></li>
+      </ul>
     </div>
     <figure class="portrait">
       <div class="arch"><img src="assets/img/katherine-lavender.webp" alt="Katherine Dudtschak holding a pot of lavender" width="1000" height="1227"></div>
       <img class="portrait__sprig" src="assets/img/art-sprig-left.webp" alt="" width="331" height="683">
+      <img class="portrait__bee" src="assets/img/art-bee.webp" alt="" width="227" height="306">
       <figcaption>Katherine at Maison Millefleurs, her lavender and honeybee farm in Prince Edward County, Ontario.</figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="recognition" aria-label="Katherine's record">
+  <div class="wrap">
+    <ul>
+      <li><strong>Twice a CEO</strong><span>RBC Caribbean and HomeEquity Bank</span></li>
+      <li><strong>Catalyst Honours 2022</strong><span>Business Leader Champion</span></li>
+      <li><strong>Board director</strong><span>Canadian Museum for Human Rights</span></li>
+      <li><strong>Author</strong><span>The memoir <em>Sincerely, Katherine.</em></span></li>
+    </ul>
   </div>
 </section>
 
@@ -114,32 +143,33 @@
       <div>
         <p class="lede">Unhurried conversations with humans finding their way home. Two people being real with each other, sometimes for two hours, sometimes for three.</p>
         <div class="actions">
-          <a class="btn" href="experience.html#show">All 25 conversations</a>
-          <a class="btn btn--line" href="https://www.youtube.com/@Sincerelyinc">Watch on YouTube</a>
+          <a class="btn" href="show.html">All 25 conversations</a>
+          <a class="btn btn--line" href="https://open.spotify.com/show/4gPeUQifKM5hwZBMWNEckZ">Follow on Spotify</a>
         </div>
       </div>
     </div>
     <article class="feature">
-      <img src="assets/img/episodes/leah-thomas.webp" alt="Episode artwork: Katherine with guest Leah Thomas" width="640" height="640" loading="lazy">
+      <a href="show-leah-thomas.html"><img src="assets/img/episodes/leah-thomas.webp" alt="Episode artwork: Katherine with guest Leah Thomas" width="640" height="640"></a>
       <div>
         <p class="kicker">Latest conversation, with Leah Thomas</p>
-        <h3>How we treat the Earth mirrors how we treat each other</h3>
-        <p>Leah Thomas lines the ceiling with vintage parachutes so that everyone underneath can picture the world they are building together. She and Katherine talk about climate and culture, radical imagination, and why rest and play are a foundation, not a reward.</p>
+        <h3><a href="show-leah-thomas.html">How We Treat the Earth Mirrors How We Treat Each Other</a></h3>
+        <p>Leah Thomas lines the ceiling with vintage parachutes so that everyone underneath them can picture the world they are building together. She is an environmental author, advocate, and content creator who works at the intersection of climate and culture. She hosts Earth Sessions climate concerts, is finishing a book on ecofeminism called Earth as Mother, and runs a local crafting club where people learn to mend and sew, because joy and sustainable skill-building belong together.</p>
+        <iframe class="player" src="https://open.spotify.com/embed/episode/6noFY1lY5xv2XF4hJItmw7?utm_source=generator&amp;theme=0" title="Listen: Leah Thomas on The Sincerely Show" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         <div class="actions">
-          <a class="btn" href="https://open.spotify.com/episode/6noFY1lY5xv2XF4hJItmw7">Listen on Spotify</a>
-          <a class="btn btn--line" href="https://sincerelyinc.com/episode/leah-thomas/">Watch the episode</a>
+          <a class="btn" href="show-leah-thomas.html">About this conversation</a>
+          <a class="btn btn--line" href="https://www.youtube.com/@Sincerelyinc">Watch on YouTube</a>
         </div>
       </div>
     </article>
     <div class="ep-grid ep-grid--row">
-<a class="ep" href="https://sincerelyinc.com/episode/john-abbott/"><img src="assets/img/episodes/john-abbott.webp" alt="" width="640" height="640" loading="lazy"><span class="ep__guest">John Abbott</span><span class="ep__title">The Perfection in the Perceived Imperfection</span></a>
-<a class="ep" href="https://sincerelyinc.com/episode/judy-wicks/"><img src="assets/img/episodes/judy-wicks.webp" alt="" width="640" height="640" loading="lazy"><span class="ep__guest">Judy Wicks</span><span class="ep__title">Building the Beloved Community, One Fort at a Time</span></a>
-<a class="ep" href="https://sincerelyinc.com/episode/micky-hoogendijk/"><img src="assets/img/episodes/micky-hoogendijk.webp" alt="" width="640" height="640" loading="lazy"><span class="ep__guest">Micky Hoogendijk</span><span class="ep__title">Vulnerability Is the Strength, and the Art of Creating Space to Move Forward</span></a>
-<a class="ep" href="https://sincerelyinc.com/episode/patricia-gagic/"><img src="assets/img/episodes/patricia-gagic.webp" alt="" width="640" height="640" loading="lazy"><span class="ep__guest">Patricia Gagic</span><span class="ep__title">In Gray Is Where All Potential Waits</span></a>
+<a class="ep" href="show-john-abbott.html" data-search="john abbott the perfection in the perceived imperfection john abbott builds a business shaped like a solar system. human connection purpose" data-tags="human connection|purpose"><span class="ep__cover"><img src="assets/img/episodes/john-abbott.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">John Abbott</span><span class="ep__title">The Perfection in the Perceived Imperfection</span></a>
+<a class="ep" href="show-judy-wicks.html" data-search="judy wicks building the beloved community, one fort at a time she has spent a lifetime building forts big enough to hold everyone. care economy community" data-tags="care economy|community"><span class="ep__cover"><img src="assets/img/episodes/judy-wicks.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Judy Wicks</span><span class="ep__title">Building the Beloved Community, One Fort at a Time</span></a>
+<a class="ep" href="show-micky-hoogendijk.html" data-search="micky hoogendijk vulnerability is the strength, and the art of creating space to move forward she places strength and vulnerability side by side and calls them one thing. creativity healing" data-tags="creativity|healing"><span class="ep__cover"><img src="assets/img/episodes/micky-hoogendijk.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Micky Hoogendijk</span><span class="ep__title">Vulnerability Is the Strength, and the Art of Creating Space to Move Forward</span></a>
+<a class="ep" href="show-patricia-gagic.html" data-search="patricia gagic in gray is where all potential waits in gray is where all the potential waits. community creativity healing purpose" data-tags="community|creativity|healing|purpose"><span class="ep__cover"><img src="assets/img/episodes/patricia-gagic.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Patricia Gagic</span><span class="ep__title">In Gray Is Where All Potential Waits</span></a>
     </div>
     <div class="guestbook">
       <p class="kicker">Who has sat in the chair across from Katherine</p>
-      <p><span>Leah Thomas</span>, John Abbott, <span>Judy Wicks</span>, Micky Hoogendijk, <span>Patricia Gagic</span>, Carlos Delgado and Craig Alexander, <span>Melissa Bernstein</span>, Eric Farewell, <span>Jennifer Hill</span>, Chip Conley, <span>Florence Shaffer</span>, Tom LeNoble, <span>Master Mingtong Gu</span>, Jem Fuller, <span>Debra Poneman</span>, Dr. Robyne Hanley-Dafoe, <span>Eila Park Robertson</span>, Anne-Marie Slaughter, <span>Joanna Barsh</span>, Colin Campbell, <span>Dr. John Izzo</span>, Sophie Grégoire, <span>Dr. Delphine Le Serre</span>, Amy Elizabeth Fox.</p>
+      <p><a href="show-leah-thomas.html">Leah Thomas</a>, <a href="show-john-abbott.html">John Abbott</a>, <a href="show-judy-wicks.html">Judy Wicks</a>, <a href="show-micky-hoogendijk.html">Micky Hoogendijk</a>, <a href="show-patricia-gagic.html">Patricia Gagic</a>, <a href="show-carlos-delgados-and-craig-alexander.html">Carlos Delgado and Craig Alexander</a>, <a href="show-melissa-bernstein.html">Melissa Bernstein</a>, <a href="show-eric-farewell.html">Eric Farewell</a>, <a href="show-jennifer-hill.html">Jennifer Hill</a>, <a href="show-chip-conley.html">Chip Conley</a>, <a href="show-florence-shaffer.html">Florence Shaffer</a>, <a href="show-tom-lenoble.html">Tom LeNoble</a>, <a href="show-master-mingtong-gu.html">Master Mingtong Gu</a>, <a href="show-jem-fuller.html">Jem Fuller</a>, <a href="show-debra-poneman.html">Debra Poneman</a>, <a href="show-robyne-hanley-dafoe.html">Dr. Robyne Hanley-Dafoe</a>, <a href="show-eila-park-robertson.html">Eila Park Robertson</a>, <a href="show-anne-marie-slaughter.html">Anne-Marie Slaughter</a>, <a href="show-joanna-barsh.html">Joanna Barsh</a>, <a href="show-colin-campbell.html">Colin Campbell</a>, <a href="show-dr-john-izzo.html">Dr. John Izzo</a>, <a href="show-sophie-gregoire.html">Sophie Grégoire</a>, <a href="show-delphine-le-serre.html">Dr. Delphine Le Serre</a>, <a href="show-amy-elizabeth-fox.html">Amy Elizabeth Fox</a>.</p>
     </div>
   </div>
 </section>
@@ -159,7 +189,37 @@
         <div><dt>15 million</dt><dd>clients served by the teams she led</dd></div>
         <div><dt>80,000</dt><dd>colleagues heard her affirm her gender in 2019</dd></div>
       </dl>
-      <div class="actions"><a class="btn btn--line" href="katherine.html">Read Katherine's story</a></div>
+      <div class="actions">
+        <a class="btn btn--line" href="katherine.html">Read Katherine's story</a>
+        <a class="btn btn--line" href="speaking.html">Invite her to speak</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--sage" aria-labelledby="human-title">
+  <div class="wrap split split--flip">
+    <div class="diagram-frame">
+      <svg class="diagram" viewBox="0 0 560 560" role="img" aria-labelledby="home-arch-title home-arch-desc">
+        <title id="home-arch-title">The human architecture</title>
+        <desc id="home-arch-desc">Three nested circles. The Essential Self is at the centre, the Physical and Inherited Self surrounds it, and the Lived Experience Self is the outer circle.</desc>
+        <circle cx="280" cy="280" r="268" fill="#C2B8CF"/>
+        <circle cx="280" cy="310" r="190" fill="#DEE9DC"/>
+        <circle cx="280" cy="350" r="108" fill="#C4A24A"/>
+        <text x="280" y="62" text-anchor="middle" class="d-title">Lived Experience Self</text>
+        <text x="280" y="88" text-anchor="middle" class="d-small">career, relationships, roles, contribution</text>
+        <text x="280" y="168" text-anchor="middle" class="d-title">Physical and Inherited Self</text>
+        <text x="280" y="194" text-anchor="middle" class="d-small">body, nervous system, lineage</text>
+        <text x="280" y="346" text-anchor="middle" class="d-title">Essential Self</text>
+        <text x="280" y="372" text-anchor="middle" class="d-small">truth, orientation, meaning</text>
+      </svg>
+    </div>
+    <div class="split__copy">
+      <p class="kicker">The deeper work</p>
+      <h2 id="human-title">Sincerely Human</h2>
+      <p class="lede">Beneath the stories lives a body of research and original thinking about how we solve problems as human beings: from fear and ego, or from kindness and curiosity.</p>
+      <p>It asks how the systems we build mirror our inner state, and what is uniquely and innately human in an age of AI. The human architecture, the journey from performance to presence, and the Three Pillars of Transformation all live here.</p>
+      <div class="actions"><a class="btn" href="human.html">Explore the frameworks</a></div>
     </div>
   </div>
 </section>
@@ -177,7 +237,7 @@
         <cite>Sophie Gr&eacute;goire Trudeau, bestselling author of <em>Closer Together</em></cite>
       </blockquote>
       <div class="actions">
-        <a class="btn" href="experience.html#book">About the book</a>
+        <a class="btn" href="book.html">About the book</a>
         <a class="btn btn--line" href="https://www.amazon.com/Sincerely-Katherine-Gender-Inclusivity-Leadership/dp/1774586924/">Buy on Amazon</a>
       </div>
     </div>
@@ -192,17 +252,17 @@
     </div>
     <div class="trio">
       <article>
-        <h3>Sincerely Dialogue</h3>
+        <h3><a href="work.html#dialogue">Sincerely Dialogue</a></h3>
         <p class="verb">Create the conditions.</p>
         <p>Human stories, kind curiosity, deep listening and shared inquiry for leadership teams and boards.</p>
       </article>
       <article>
-        <h3>Speaking, lecturing and learning</h3>
+        <h3><a href="speaking.html">Speaking, lecturing and learning</a></h3>
         <p class="verb">Develop perspective and practice.</p>
         <p>Keynotes, lectures and a five-module learning series on the essence and practice of transformational leadership.</p>
       </article>
       <article>
-        <h3>Sincerely Advisory</h3>
+        <h3><a href="work.html#advisory">Sincerely Advisory</a></h3>
         <p class="verb">Steward and sustain.</p>
         <p>Selective, confidential counsel for boards, CEOs and executive teams, and for private clients at consequential moments.</p>
       </article>
@@ -211,6 +271,32 @@
       <a class="btn btn--light" href="work.html#conversation">Begin a conversation</a>
       <a class="btn btn--ghost" href="work.html">See the ways of working</a>
     </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="stay-title">
+  <div class="wrap split">
+    <div class="split__copy">
+      <h2 id="stay-title">Please stay.</h2>
+      <p class="lede">Once a week you will receive a letter: reflections, stories and small offerings for the path.</p>
+      <p>You will be the first to know when new conversations arrive, when gatherings are announced, and when the doors open at the farm.</p>
+      <form class="inline-form inline-form--light" data-preview="Thank you. This is a concept preview, so nothing was sent or saved." style="margin-top: 2rem">
+        <label class="visually-hidden" for="stay-email">Email address</label>
+        <input id="stay-email" type="email" placeholder="Your email address" required>
+        <button class="btn" type="submit">Send me the letters</button>
+        <p class="form-note" role="status"></p>
+      </form>
+      <p style="margin-top: 1.4rem"><a class="link" href="letters.html">Read all 10 letters</a></p>
+    </div>
+    <article class="letter">
+      <h3>The black sheep.</h3>
+      <time>This week's letter, November 10, 2026</time>
+      <p>A few days ago, I was talking with a friend, someone I care about and deeply admire. We were talking about family, about the things we carry through our lives, and about her journey of breaking a cycle of intergenerational trauma.</p>
+      <p>At one point, she referred to herself as the black sheep of the family.</p>
+      <p>Those words stopped me. I have never seen her as a black sheep. I see an extraordinary mother, an incredibly curious, creative and talented human being, and someone who is beautiful inside and out. Someone who has found the courage to journey deeply within herself, to embrace more of who she truly is, and to live from that place. Her essence. Her uniqueness. Her beauty.</p>
+      <p><a class="link" href="letter-the-black-sheep.html">Keep reading</a></p>
+      <p class="letter__sign">Sincerely, Katherine.</p>
+    </article>
   </div>
 </section>
 
@@ -231,9 +317,9 @@
       <div>
         <h2>Experience Sincerely</h2>
         <ul>
-          <li><a href="experience.html#show">The Sincerely Show</a></li>
-          <li><a href="experience.html#letters">Sincerely Letters</a></li>
-          <li><a href="experience.html#book">The memoir</a></li>
+          <li><a href="show.html">The Sincerely Show</a></li>
+          <li><a href="letters.html">Sincerely Letters</a></li>
+          <li><a href="book.html">The memoir</a></li>
           <li><a href="experience.html#table">Salons and gatherings</a></li>
         </ul>
       </div>
@@ -250,7 +336,8 @@
         <h2>Work with Sincerely</h2>
         <ul>
           <li><a href="work.html#dialogue">Sincerely Dialogue</a></li>
-          <li><a href="work.html#speaking">Speaking, lecturing and learning</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="work.html#learning">The learning series</a></li>
           <li><a href="work.html#advisory">Sincerely Advisory</a></li>
           <li><a href="work.html#conversation">Begin a conversation</a></li>
         </ul>
@@ -260,9 +347,11 @@
         <ul>
           <li><a href="katherine.html">Katherine Dudtschak</a></li>
           <li><a href="foundation.html">Sincerely Foundation</a></li>
+          <li><a href="https://open.spotify.com/show/4gPeUQifKM5hwZBMWNEckZ">Spotify</a></li>
+          <li><a href="https://podcasts.apple.com/us/podcast/the-sincerely-show/id1896789151">Apple Podcasts</a></li>
           <li><a href="https://www.youtube.com/@Sincerelyinc">YouTube</a></li>
-          <li><a href="https://www.linkedin.com/in/katherine-dudtschak-icd-d-7673a036/">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/kdudtschak/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/katherine-dudtschak-icd-d-7673a036/">LinkedIn</a></li>
         </ul>
       </div>
     </div>
