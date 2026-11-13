@@ -11,10 +11,8 @@
 <meta property="og:title" content="Sincerely Human | Research, models and frameworks">
 <meta property="og:description" content="The institute&#x27;s home for human inquiry: the human architecture, how transformation happens and the Three Pillars.">
 <meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#3A2F4E">
+<meta name="theme-color" content="#2A2140">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +27,12 @@
     <a class="brand" href="index.html" aria-label="Sincerely, home"><img src="assets/img/logo-rose.png" alt="Sincerely" width="590" height="126"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="experience.html">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="experience.html#table">Salons and gatherings</a></div></div>
+      <div class="nav__item"><a class="nav__link" href="experience.html">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="library.html">The Library</a><a href="experience.html#table">Salons and gatherings</a></div></div>
       <a class="nav__link" href="human.html" aria-current="page">Sincerely Human</a>
       <div class="nav__item"><a class="nav__link" href="work.html">Work with Sincerely</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Work with Sincerely menu"></button><div class="nav__menu"><a href="work.html#dialogue">Sincerely Dialogue</a><a href="speaking.html">Speaking</a><a href="work.html#learning">The learning series</a><a href="work.html#advisory">Sincerely Advisory</a></div></div>
       <a class="nav__link" href="foundation.html">Foundation</a>
       <a class="nav__link" href="katherine.html">Katherine</a>
+      <a class="nav__search" href="library.html" aria-label="Search the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search the library</span></a>
       <a class="btn" href="work.html#conversation">Begin a conversation</a>
     </nav>
   </div>
@@ -43,7 +42,7 @@
   <div class="wrap pagehead__grid">
     <div>
       <h1>Sincerely Human</h1>
-      <p class="lede">The institute's home for human inquiry: research, reflection, and the models and frameworks that explore shared humanity, human uniqueness, wholeness and transformation.</p>
+      <p class="lede">The institute’s home for human inquiry: research, reflection, and the models and frameworks that explore shared humanity, human uniqueness, wholeness and transformation.</p>
       <ul class="subnav" aria-label="On this page">
         <li><a href="#architecture">The human architecture</a></li>
         <li><a href="#journey">How transformation happens</a></li>
@@ -66,7 +65,7 @@
         <h3>From fear and ego</h3>
         <p>We fragment. We create winners and losers. We extract from ourselves, from each other, from nature and from the systems we build.</p>
       </div>
-      <div class="card card--plum">
+      <div class="card card--night">
         <h3>From kindness and curiosity</h3>
         <p>We harmonize. We listen. We include. We serve a more integrated way of being with each other and with the living world.</p>
       </div>
@@ -76,31 +75,44 @@
 </section>
 
 <section class="band" id="architecture" aria-labelledby="architecture-title">
-  <div class="wrap split">
-    <div class="diagram-frame" style="background: var(--parchment)">
+  <div class="wrap split explorer">
+    <div class="diagram-frame">
       <svg class="diagram" viewBox="0 0 560 560" role="img" aria-labelledby="arch-svg-title arch-svg-desc">
         <title id="arch-svg-title">The human architecture</title>
         <desc id="arch-svg-desc">Three nested circles. The Essential Self is at the centre, the Physical and Inherited Self surrounds it, and the Lived Experience Self is the outer circle.</desc>
-        <circle cx="280" cy="280" r="268" fill="#C2B8CF"/>
-        <circle cx="280" cy="310" r="190" fill="#DEE9DC"/>
-        <circle cx="280" cy="350" r="108" fill="#C4A24A"/>
-        <text x="280" y="62" text-anchor="middle" class="d-title">Lived Experience Self</text>
-        <text x="280" y="88" text-anchor="middle" class="d-small">career, relationships, roles, contribution</text>
-        <text x="280" y="168" text-anchor="middle" class="d-title">Physical and Inherited Self</text>
-        <text x="280" y="194" text-anchor="middle" class="d-small">body, nervous system, lineage</text>
-        <text x="280" y="346" text-anchor="middle" class="d-title" fill="#2C2340">Essential Self</text>
-        <text x="280" y="372" text-anchor="middle" class="d-small">truth, orientation, meaning</text>
+        <g data-part="lived">
+          <circle cx="280" cy="280" r="268" fill="#C2B8CF"/>
+          <text x="280" y="62" text-anchor="middle" class="d-title">Lived Experience Self</text>
+          <text x="280" y="88" text-anchor="middle" class="d-small">career, relationships, roles, contribution</text>
+        </g>
+        <g data-part="physical">
+          <circle cx="280" cy="310" r="190" fill="#DEE9DC"/>
+          <text x="280" y="168" text-anchor="middle" class="d-title">Physical and Inherited Self</text>
+          <text x="280" y="194" text-anchor="middle" class="d-small">body, nervous system, lineage</text>
+        </g>
+        <g data-part="essential">
+          <circle cx="280" cy="350" r="108" fill="#C4A24A"/>
+          <text x="280" y="346" text-anchor="middle" class="d-title">Essential Self</text>
+          <text x="280" y="372" text-anchor="middle" class="d-small">truth, orientation, meaning</text>
+        </g>
       </svg>
     </div>
     <div class="split__copy">
       <h2 id="architecture-title">The human architecture</h2>
       <p class="lede">A model of human identity with three inseparable parts. Essence is expressed through the instrument of the body, and then through a life lived in the world.</p>
-      <h4>Essential Self</h4>
-      <p>The intrinsic organizing intelligence of a human being. It is not constructed, learned or performed. It does not need healing. It requires expression.</p>
-      <h4>Physical and Inherited Self</h4>
-      <p>The instrument through which essence expresses: the body, nervous system, genetics and lineage memory. Not a problem to transcend, but the vehicle.</p>
-      <h4>Lived Experience Self</h4>
-      <p>How essence shows up in the world. Aligned with essence, it becomes service. Disconnected from it, it becomes performance.</p>
+      <div class="explorer__item" data-for="essential" tabindex="0">
+        <h3>Essential Self</h3>
+        <p>The intrinsic organizing intelligence of a human being. It is not constructed, learned or performed. It does not need healing. It requires expression.</p>
+      </div>
+      <div class="explorer__item" data-for="physical" tabindex="0">
+        <h3>Physical and Inherited Self</h3>
+        <p>The instrument through which essence expresses: the body, nervous system, genetics and lineage memory. Not a problem to transcend, but the vehicle.</p>
+      </div>
+      <div class="explorer__item" data-for="lived" tabindex="0">
+        <h3>Lived Experience Self</h3>
+        <p>How essence shows up in the world. Aligned with essence, it becomes service. Disconnected from it, it becomes performance.</p>
+      </div>
+      <p class="explorer__hint">Choose a circle or a description to see how they pair.</p>
     </div>
   </div>
 </section>
@@ -119,9 +131,9 @@
   </div>
 </section>
 
-<section class="band" id="crises" aria-labelledby="crises-title">
-  <div class="wrap split split--flip">
-    <div class="diagram-frame" style="background: var(--lavender-mist)">
+<section class="band band--mist" id="crises" aria-labelledby="crises-title">
+  <div class="wrap split split--flip explorer">
+    <div class="diagram-frame">
       <svg class="diagram" viewBox="0 0 560 560" role="img" aria-labelledby="crises-svg-title crises-svg-desc">
         <title id="crises-svg-title">Four existential crises</title>
         <desc id="crises-svg-desc">Three circles labelled planetary, economic and social sit inside a larger ring labelled information and disinformation overwhelm, which surrounds and accelerates all three.</desc>
@@ -129,74 +141,123 @@
           <path id="ring-top" d="M 42 280 A 238 238 0 0 1 518 280"/>
           <path id="ring-bottom" d="M 26 280 A 254 254 0 0 0 534 280"/>
         </defs>
-        <circle cx="280" cy="280" r="247" fill="none" stroke="#9B86B7" stroke-width="58" opacity="0.5"/>
-        <text class="d-title" font-size="24"><textPath href="#ring-top" startOffset="50%" text-anchor="middle">Information and disinformation overwhelm</textPath></text>
-        <text class="d-small"><textPath href="#ring-bottom" startOffset="50%" text-anchor="middle">surrounds and accelerates all three, with AI as an accelerant</textPath></text>
-        <circle cx="280" cy="200" r="86" fill="#94B08E" opacity="0.85"/>
-        <circle cx="208" cy="326" r="86" fill="#C4A24A" opacity="0.8"/>
-        <circle cx="352" cy="326" r="86" fill="#D69096" opacity="0.8"/>
-        <text x="280" y="184" text-anchor="middle" class="d-title">Planetary</text>
-        <text x="192" y="342" text-anchor="middle" class="d-title">Economic</text>
-        <text x="370" y="342" text-anchor="middle" class="d-title">Social</text>
+        <g data-part="information">
+          <circle cx="280" cy="280" r="247" fill="none" stroke="#9B86B7" stroke-width="58" opacity="0.5"/>
+          <text class="d-title" font-size="24"><textPath href="#ring-top" startOffset="50%" text-anchor="middle">Information and disinformation overwhelm</textPath></text>
+          <text class="d-small"><textPath href="#ring-bottom" startOffset="50%" text-anchor="middle">surrounds and accelerates all three, with AI as an accelerant</textPath></text>
+        </g>
+        <g data-part="planetary">
+          <circle cx="280" cy="200" r="86" fill="#94B08E" opacity="0.85"/>
+          <text x="280" y="184" text-anchor="middle" class="d-title">Planetary</text>
+        </g>
+        <g data-part="economic">
+          <circle cx="208" cy="326" r="86" fill="#C4A24A" opacity="0.8"/>
+          <text x="192" y="342" text-anchor="middle" class="d-title">Economic</text>
+        </g>
+        <g data-part="social">
+          <circle cx="352" cy="326" r="86" fill="#D69096" opacity="0.8"/>
+          <text x="370" y="342" text-anchor="middle" class="d-title">Social</text>
+        </g>
       </svg>
     </div>
     <div class="split__copy">
       <h2 id="crises-title">The crises of our time</h2>
       <p class="lede">This work exists in a specific moment: four converging existential crises, and a sharper question about what is uniquely and innately human.</p>
-      <h4>Planetary</h4>
-      <p>Ecological limits breached by extractive systems. The Earth calling us back to reciprocity.</p>
-      <h4>Economic</h4>
-      <p>Instability, inequality and burnout produced by productivity-driven models.</p>
-      <h4>Social</h4>
-      <p>Fragmentation, polarization and the loss of shared meaning.</p>
-      <h4>Information and disinformation</h4>
-      <p>The fourth crisis surrounds the other three and speeds them up. AI is a powerful accelerant across all of it.</p>
+      <div class="explorer__item" data-for="planetary" tabindex="0">
+        <h3>Planetary</h3>
+        <p>Ecological limits breached by extractive systems. The Earth calling us back to reciprocity.</p>
+      </div>
+      <div class="explorer__item" data-for="economic" tabindex="0">
+        <h3>Economic</h3>
+        <p>Instability, inequality and burnout produced by productivity-driven models.</p>
+      </div>
+      <div class="explorer__item" data-for="social" tabindex="0">
+        <h3>Social</h3>
+        <p>Fragmentation, polarization and the loss of shared meaning.</p>
+      </div>
+      <div class="explorer__item" data-for="information" tabindex="0">
+        <h3>Information and disinformation</h3>
+        <p>The fourth crisis surrounds the other three and speeds them up. AI is a powerful accelerant across all of it.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="band band--parchment" id="pillars" aria-labelledby="pillars-title">
-  <div class="wrap">
+  <div class="wrap explorer">
     <div class="band__head band__head--split">
       <h2 id="pillars-title">The Three Pillars of Transformation</h2>
       <p class="lede">An applied leadership architecture that holds purpose, human relationships and institutional action in one field. It creates the conditions for transformation. It does not manufacture potential.</p>
     </div>
     <div class="diagram-frame">
-      <svg class="diagram" viewBox="0 0 1000 560" role="img" aria-labelledby="pillars-svg-title pillars-svg-desc">
+      <svg class="diagram only-narrow" viewBox="0 0 400 470" role="img" aria-labelledby="pillars-n-title pillars-n-desc">
+        <title id="pillars-n-title">The Three Pillars of Transformation</title>
+        <desc id="pillars-n-desc">Higher Purpose spans the top. Embodied Trust and Living Roadmap stand as two pillars beneath it, joined by Relational Coherence. Leadership is the foundation under everything.</desc>
+        <g data-part="purpose">
+          <path d="M 16 112 Q 200 -14 384 112 L 384 128 L 16 128 Z" fill="#C4A24A"/>
+          <text x="200" y="92" text-anchor="middle" class="d-title" font-size="27">Higher Purpose</text>
+        </g>
+        <g data-part="trust">
+          <rect x="36" y="128" width="136" height="252" fill="#C2B8CF"/>
+          <text x="104" y="172" text-anchor="middle" class="d-title" font-size="22">Embodied</text>
+          <text x="104" y="198" text-anchor="middle" class="d-title" font-size="22">Trust</text>
+        </g>
+        <g data-part="roadmap">
+          <rect x="228" y="128" width="136" height="252" fill="#DEE9DC" stroke="#94B08E" stroke-width="2"/>
+          <text x="296" y="172" text-anchor="middle" class="d-title" font-size="22">Living</text>
+          <text x="296" y="198" text-anchor="middle" class="d-title" font-size="22">Roadmap</text>
+        </g>
+        <g data-part="coherence">
+          <line x1="172" y1="290" x2="228" y2="290" stroke="#D69096" stroke-width="3"/>
+          <circle cx="200" cy="290" r="68" fill="#D69096"/>
+          <text x="200" y="284" text-anchor="middle" class="d-title" font-size="19">Relational</text>
+          <text x="200" y="307" text-anchor="middle" class="d-title" font-size="19">Coherence</text>
+        </g>
+        <g data-part="leadership">
+          <rect x="16" y="380" width="368" height="74" fill="#3A2F4E"/>
+          <text x="200" y="426" text-anchor="middle" class="d-title d-light" font-size="26">Leadership</text>
+        </g>
+      </svg>
+      <svg class="diagram only-wide" viewBox="0 0 1000 560" role="img" aria-labelledby="pillars-svg-title pillars-svg-desc">
         <title id="pillars-svg-title">The Three Pillars of Transformation</title>
         <desc id="pillars-svg-desc">Higher Purpose spans the top as the organizing orientation. Embodied Trust and Living Roadmap stand as two pillars beneath it. Relational Coherence sits between them as the connective centre. Leadership is the foundation under everything.</desc>
-        <path d="M 60 150 Q 500 -40 940 150 L 940 170 L 60 170 Z" fill="#C4A24A"/>
-        <text x="500" y="112" text-anchor="middle" class="d-title" font-size="34">Higher Purpose</text>
-        <text x="500" y="142" text-anchor="middle">the organizing orientation: what are we in service of beyond ourselves?</text>
-        <rect x="110" y="170" width="250" height="280" fill="#C2B8CF"/>
-        <text x="235" y="262" text-anchor="middle" class="d-title">Embodied Trust</text>
-        <text x="235" y="296" text-anchor="middle" class="d-small">the conditions people experience</text>
-        <text x="235" y="336" text-anchor="middle" class="d-small">dignity, integrity, presence,</text>
-        <text x="235" y="356" text-anchor="middle" class="d-small">candour, psychological safety,</text>
-        <text x="235" y="376" text-anchor="middle" class="d-small">reliable action</text>
-        <rect x="640" y="170" width="250" height="280" fill="#DEE9DC" stroke="#94B08E" stroke-width="2"/>
-        <text x="765" y="262" text-anchor="middle" class="d-title">Living Roadmap</text>
-        <text x="765" y="296" text-anchor="middle" class="d-small">purpose expressed in action</text>
-        <text x="765" y="336" text-anchor="middle" class="d-small">strategy, capital, governance,</text>
-        <text x="765" y="356" text-anchor="middle" class="d-small">capability, learning,</text>
-        <text x="765" y="376" text-anchor="middle" class="d-small">adaptation</text>
-        <line x1="360" y1="310" x2="640" y2="310" stroke="#D69096" stroke-width="3"/>
-        <circle cx="500" cy="310" r="104" fill="#D69096"/>
-        <text x="500" y="298" text-anchor="middle" class="d-title" font-size="25">Relational</text>
-        <text x="500" y="326" text-anchor="middle" class="d-title" font-size="25">Coherence</text>
-        <text x="500" y="352" text-anchor="middle" class="d-small">the connective centre</text>
-        <rect x="60" y="450" width="880" height="84" fill="#3A2F4E"/>
-        <text x="500" y="488" text-anchor="middle" class="d-title d-light" font-size="30">Leadership</text>
-        <text x="500" y="514" text-anchor="middle" class="d-light">the embodied and lived foundation</text>
+        <g data-part="purpose">
+          <path d="M 60 150 Q 500 -40 940 150 L 940 170 L 60 170 Z" fill="#C4A24A"/>
+          <text x="500" y="112" text-anchor="middle" class="d-title" font-size="34">Higher Purpose</text>
+          <text x="500" y="142" text-anchor="middle">the organizing orientation</text>
+        </g>
+        <g data-part="trust">
+          <rect x="110" y="170" width="250" height="280" fill="#C2B8CF"/>
+          <text x="235" y="300" text-anchor="middle" class="d-title">Embodied Trust</text>
+          <text x="235" y="330" text-anchor="middle" class="d-small">the conditions people experience</text>
+        </g>
+        <g data-part="roadmap">
+          <rect x="640" y="170" width="250" height="280" fill="#DEE9DC" stroke="#94B08E" stroke-width="2"/>
+          <text x="765" y="300" text-anchor="middle" class="d-title">Living Roadmap</text>
+          <text x="765" y="330" text-anchor="middle" class="d-small">purpose expressed in action</text>
+        </g>
+        <g data-part="coherence">
+          <line x1="360" y1="310" x2="640" y2="310" stroke="#D69096" stroke-width="3"/>
+          <circle cx="500" cy="310" r="104" fill="#D69096"/>
+          <text x="500" y="298" text-anchor="middle" class="d-title" font-size="25">Relational</text>
+          <text x="500" y="326" text-anchor="middle" class="d-title" font-size="25">Coherence</text>
+          <text x="500" y="352" text-anchor="middle" class="d-small">the connective centre</text>
+        </g>
+        <g data-part="leadership">
+          <rect x="60" y="450" width="880" height="84" fill="#3A2F4E"/>
+          <text x="500" y="488" text-anchor="middle" class="d-title d-light" font-size="30">Leadership</text>
+          <text x="500" y="514" text-anchor="middle" class="d-light">the embodied and lived foundation</text>
+        </g>
       </svg>
     </div>
-    <div class="cards cards--4" style="margin-top: 20px">
-      <div class="card"><h4>Higher Purpose</h4><p>Human and institutional achievement matter in relationship to humanity and the larger living world.</p></div>
-      <div class="card"><h4>Embodied Trust</h4><p>Dignity, integrity, presence and candour create room for authentic contribution.</p></div>
-      <div class="card"><h4>Living Roadmap</h4><p>Strategy, capital, operating capacity and governance brought together in a living pathway.</p></div>
-      <div class="card"><h4>Relational Coherence</h4><p>Presence, kindness, curiosity, empathy, compassion, deep listening and love.</p></div>
+    <div class="cards cards--3" style="margin-top: 20px">
+      <div class="card explorer__item" data-for="purpose" tabindex="0"><h3>Higher Purpose</h3><p>What are we in service of beyond ourselves? Human and institutional achievement matter in relationship to humanity and the larger living world.</p></div>
+      <div class="card explorer__item" data-for="trust" tabindex="0"><h3>Embodied Trust</h3><p>Dignity, integrity, presence, candour, psychological safety and reliable action create room for authentic contribution.</p></div>
+      <div class="card explorer__item" data-for="roadmap" tabindex="0"><h3>Living Roadmap</h3><p>Strategy, capital, operating capacity, governance, capability, learning and adaptation, brought together in a living pathway.</p></div>
+      <div class="card explorer__item" data-for="coherence" tabindex="0"><h3>Relational Coherence</h3><p>Presence, kindness, curiosity, empathy, compassion, deep listening and love shape how people encounter one another.</p></div>
+      <div class="card explorer__item" data-for="leadership" tabindex="0"><h3>Leadership</h3><p>Leaders steward the whole field: creating conditions for contribution, exercising power with integrity and staying accountable for consequences.</p></div>
+      <div class="card card--night"><h3>What becomes possible</h3><p>Human wholeness and well-being, belonging and inclusion, coherent institutions, sustainable contribution, regeneration and harmony.</p></div>
     </div>
-    <p class="serif-lede measure" style="margin-top: 2.6rem">What becomes possible: human wholeness and well-being, belonging and inclusion, coherent institutions, sustainable contribution, regeneration and harmony.</p>
     <div class="actions"><a class="btn" href="work.html">Bring this into your organization</a></div>
   </div>
 </section>
@@ -216,7 +277,7 @@
   <div class="wrap">
     <div class="footer__signoff">
       <p>Sincerely,</p>
-      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126">
+      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126" loading="lazy">
     </div>
     <div class="footer__cols">
       <div>
@@ -225,6 +286,7 @@
           <li><a href="show.html">The Sincerely Show</a></li>
           <li><a href="letters.html">Sincerely Letters</a></li>
           <li><a href="book.html">The memoir</a></li>
+          <li><a href="library.html">The Library</a></li>
           <li><a href="experience.html#table">Salons and gatherings</a></li>
         </ul>
       </div>

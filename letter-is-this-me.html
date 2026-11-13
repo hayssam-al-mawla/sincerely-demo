@@ -11,10 +11,8 @@
 <meta property="og:title" content="Is this me? | Sincerely Letters">
 <meta property="og:description" content="On a recent Friday evening at Decanter, my friend Karen Palmer was sitting at her typewriter, writing poems for the people gathered there. It was one of the final weeks of this spe">
 <meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#3A2F4E">
+<meta name="theme-color" content="#2A2140">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,31 +27,34 @@
     <a class="brand" href="index.html" aria-label="Sincerely, home"><img src="assets/img/logo-rose.png" alt="Sincerely" width="590" height="126"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="experience.html" aria-current="page">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="experience.html#table">Salons and gatherings</a></div></div>
+      <div class="nav__item"><a class="nav__link" href="experience.html" aria-current="page">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="library.html">The Library</a><a href="experience.html#table">Salons and gatherings</a></div></div>
       <a class="nav__link" href="human.html">Sincerely Human</a>
       <div class="nav__item"><a class="nav__link" href="work.html">Work with Sincerely</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Work with Sincerely menu"></button><div class="nav__menu"><a href="work.html#dialogue">Sincerely Dialogue</a><a href="speaking.html">Speaking</a><a href="work.html#learning">The learning series</a><a href="work.html#advisory">Sincerely Advisory</a></div></div>
       <a class="nav__link" href="foundation.html">Foundation</a>
       <a class="nav__link" href="katherine.html">Katherine</a>
+      <a class="nav__search" href="library.html" aria-label="Search the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search the library</span></a>
       <a class="btn" href="work.html#conversation">Begin a conversation</a>
     </nav>
   </div>
 </header>
+<div class="progress" aria-hidden="true"></div>
 <main id="main">
 <section class="band letterpage">
   <div class="wrap letterpage__grid">
     <aside class="letterpage__side">
       <p class="kicker"><a href="letters.html">Sincerely Letters</a></p>
-      <p class="serif-lede">A letter from Katherine, written at the farm on October 13, 2026.</p>
+      <p class="serif-lede">A letter from Katherine, October 13, 2026.</p>
       <form class="inline-form inline-form--light" data-preview="Thank you. This is a concept preview, so nothing was sent or saved." style="margin-top: 1.6rem">
         <label class="visually-hidden" for="letter-email">Email address</label>
-        <input id="letter-email" type="email" placeholder="Your email address" required>
+        <input id="letter-email" type="email" autocomplete="email" placeholder="Your email address" required>
         <button class="btn" type="submit">Send me the letters</button>
         <p class="form-note" role="status"></p>
       </form>
       <img src="assets/img/art-letters.webp" alt="" width="600" height="600" loading="lazy" class="letterpage__art">
     </aside>
     <article class="letter letter--full">
-      <h1>Is this me?</h1>
+      <svg class="postmark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pm-top" d="M 20 60 A 40 40 0 0 1 100 60"/><path id="pm-bottom" d="M 12 60 A 48 48 0 0 0 108 60"/></defs><circle cx="60" cy="60" r="57" stroke-width="2"/><circle cx="60" cy="60" r="33" stroke-width="1.2"/><text font-size="9.4" letter-spacing="1.5"><textPath href="#pm-top" startOffset="50%" text-anchor="middle">SINCERELY LETTERS</textPath></text><text font-size="8.2" letter-spacing="1.5"><textPath href="#pm-bottom" startOffset="50%" text-anchor="middle">FROM KATHERINE</textPath></text><text x="60" y="59" text-anchor="middle" font-size="14.5">13 OCT</text><text x="60" y="74" text-anchor="middle" font-size="10.5">2026</text></svg>
+      <h1 style="view-transition-name: letter-is-this-me">Is this me?</h1>
       <time>October 13, 2026</time>
       <p>On a recent Friday evening at Decanter, my friend Karen Palmer was sitting at her typewriter, writing poems for the people gathered there. It was one of the final weeks of this special place as we know it. MJ and Angie have fostered and nurtured such a loving community here in Prince Edward County, and these Friday gatherings have become a cherished part of our lives.</p>
       <p>Karen calls her typewriter Olive. She’s an Olivetti, and Decanter was the first place Olive made her debut. And here they were again, Karen and Olive, in one of the final weeks of Decanter as we know it.</p>
@@ -70,9 +71,9 @@
   </div>
 </section>
 
-<section class="band band--parchment">
+<section class="band band--tight">
   <div class="wrap">
-    <nav class="pager" aria-label="More letters"><a class="pager__link" href="letter-an-exchange-of-love.html"><span>Earlier letter</span><strong>An exchange of love.</strong></a><a class="pager__link pager__link--next" href="letter-sacred.html"><span>Next letter</span><strong>Sacred.</strong></a></nav>
+    <nav class="pager" aria-label="Neighbouring letters"><a class="pager__link" href="letter-an-exchange-of-love.html"><span>Earlier letter</span><strong>An exchange of love.</strong></a><a class="pager__link pager__link--next" href="letter-sacred.html"><span>Next letter</span><strong>Sacred.</strong></a></nav>
     <div class="actions"><a class="btn btn--line" href="letters.html">All letters</a></div>
   </div>
 </section>
@@ -81,7 +82,7 @@
   <div class="wrap">
     <div class="footer__signoff">
       <p>Sincerely,</p>
-      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126">
+      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126" loading="lazy">
     </div>
     <div class="footer__cols">
       <div>
@@ -90,6 +91,7 @@
           <li><a href="show.html">The Sincerely Show</a></li>
           <li><a href="letters.html">Sincerely Letters</a></li>
           <li><a href="book.html">The memoir</a></li>
+          <li><a href="library.html">The Library</a></li>
           <li><a href="experience.html#table">Salons and gatherings</a></li>
         </ul>
       </div>

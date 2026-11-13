@@ -11,10 +11,9 @@
 <meta property="og:title" content="Sincerely | An institute for human inquiry, leadership and transformation">
 <meta property="og:description" content="Sincerely is an institute for human inquiry, leadership and transformation, founded by Katherine Dudtschak.">
 <meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#3A2F4E">
+<meta name="theme-color" content="#2A2140">
+<link rel="preload" as="image" href="assets/img/katherine-lavender.webp" fetchpriority="high">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +28,12 @@
     <a class="brand" href="index.html" aria-label="Sincerely, home"><img src="assets/img/logo-rose.png" alt="Sincerely" width="590" height="126"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="experience.html">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="experience.html#table">Salons and gatherings</a></div></div>
+      <div class="nav__item"><a class="nav__link" href="experience.html">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="library.html">The Library</a><a href="experience.html#table">Salons and gatherings</a></div></div>
       <a class="nav__link" href="human.html">Sincerely Human</a>
       <div class="nav__item"><a class="nav__link" href="work.html">Work with Sincerely</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Work with Sincerely menu"></button><div class="nav__menu"><a href="work.html#dialogue">Sincerely Dialogue</a><a href="speaking.html">Speaking</a><a href="work.html#learning">The learning series</a><a href="work.html#advisory">Sincerely Advisory</a></div></div>
       <a class="nav__link" href="foundation.html">Foundation</a>
       <a class="nav__link" href="katherine.html">Katherine</a>
+      <a class="nav__search" href="library.html" aria-label="Search the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search the library</span></a>
       <a class="btn" href="work.html#conversation">Begin a conversation</a>
     </nav>
   </div>
@@ -49,7 +49,7 @@
       <p class="hero__lede">An institute for human inquiry, leadership and transformation.</p>
       <p class="hero__mission">Founded by Katherine Dudtschak to unlock human potential in service of a harmonious and sustainable world.</p>
       <div class="actions">
-        <a class="btn" href="show.html">Listen to the show</a>
+        <a class="btn" href="show.html">Watch the show</a>
         <a class="btn btn--line" href="work.html">Work with Sincerely</a>
       </div>
       <ul class="platforms" aria-label="Follow Sincerely">
@@ -61,10 +61,10 @@
       </ul>
     </div>
     <figure class="portrait">
-      <div class="arch"><img src="assets/img/katherine-lavender.webp" alt="Katherine Dudtschak holding a pot of lavender" width="1000" height="1227"></div>
+      <div class="arch"><img src="assets/img/katherine-lavender.webp" alt="Katherine Dudtschak holding a pot of lavender" width="1000" height="1227" fetchpriority="high"></div>
       <img class="portrait__sprig" src="assets/img/art-sprig-left.webp" alt="" width="331" height="683">
       <img class="portrait__bee" src="assets/img/art-bee.webp" alt="" width="227" height="306">
-      <figcaption>Katherine at Maison Millefleurs, her lavender and honeybee farm in Prince Edward County, Ontario.</figcaption>
+      <figcaption>Katherine Dudtschak, founder of Sincerely. She lives at Maison Millefleurs, her lavender and honeybee farm in Prince Edward County, Ontario.</figcaption>
     </figure>
   </div>
 </section>
@@ -80,15 +80,15 @@
   </div>
 </section>
 
-<section class="band band--plum letterband" aria-labelledby="letters-title">
+<section class="band band--plum band--tight letterband" aria-labelledby="letters-title">
   <div class="wrap letterband__grid">
     <div>
       <h2 id="letters-title">A letter arrives once a week.</h2>
-      <p>Small, honest, unhurried. Katherine writes from her desk at the farm, the way she would write to someone she thinks of often.</p>
+      <p>Small, honest, unhurried. Katherine writes the way she would write to someone she has not seen in a while but thinks of often.</p>
     </div>
     <form class="inline-form" data-preview="Thank you. This is a concept preview, so nothing was sent or saved.">
       <label class="visually-hidden" for="letter-email">Email address</label>
-      <input id="letter-email" type="email" placeholder="Your email address" required>
+      <input id="letter-email" type="email" autocomplete="email" placeholder="Your email address" required>
       <button class="btn btn--light" type="submit">Send me the letters</button>
       <p class="form-note" role="status"></p>
     </form>
@@ -136,40 +136,39 @@
   </div>
 </section>
 
-<section class="band band--parchment" aria-labelledby="show-title">
-  <div class="wrap">
+<section class="band band--night" aria-labelledby="show-title">
+  <div class="filmstrip" aria-hidden="true"><div class="filmstrip__track"><img src="assets/img/episodes/thumbs/leah-thomas.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/john-abbott.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/judy-wicks.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/micky-hoogendijk.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/patricia-gagic.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/carlos-delgados-and-craig-alexander.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/melissa-bernstein.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/eric-farewell.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/jennifer-hill.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/chip-conley.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/florence-shaffer.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/tom-lenoble.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/master-mingtong-gu.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/jem-fuller.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/debra-poneman.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/robyne-hanley-dafoe.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/eila-park-robertson.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/anne-marie-slaughter.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/joanna-barsh.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/colin-campbell.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/dr-john-izzo.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/sophie-gregoire.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/delphine-le-serre.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/amy-elizabeth-fox.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/katherine-dudtschak.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/leah-thomas.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/john-abbott.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/judy-wicks.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/micky-hoogendijk.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/patricia-gagic.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/carlos-delgados-and-craig-alexander.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/melissa-bernstein.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/eric-farewell.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/jennifer-hill.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/chip-conley.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/florence-shaffer.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/tom-lenoble.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/master-mingtong-gu.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/jem-fuller.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/debra-poneman.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/robyne-hanley-dafoe.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/eila-park-robertson.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/anne-marie-slaughter.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/joanna-barsh.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/colin-campbell.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/dr-john-izzo.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/sophie-gregoire.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/delphine-le-serre.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/amy-elizabeth-fox.webp" alt="" width="300" height="300" loading="lazy"><img src="assets/img/episodes/thumbs/katherine-dudtschak.webp" alt="" width="300" height="300" loading="lazy"></div></div>
+  <div class="wrap" style="margin-top: clamp(48px, 7vw, 88px)">
     <div class="band__head band__head--split">
       <h2 id="show-title">The Sincerely Show</h2>
       <div>
         <p class="lede">Unhurried conversations with humans finding their way home. Two people being real with each other, sometimes for two hours, sometimes for three.</p>
         <div class="actions">
-          <a class="btn" href="show.html">All 25 conversations</a>
-          <a class="btn btn--line" href="https://open.spotify.com/show/4gPeUQifKM5hwZBMWNEckZ">Follow on Spotify</a>
+          <a class="btn btn--light" href="show.html">All 25 conversations</a>
+          <a class="btn btn--ghost" href="https://open.spotify.com/show/4gPeUQifKM5hwZBMWNEckZ">Follow on Spotify</a>
         </div>
       </div>
     </div>
-    <article class="feature">
-      <a href="show-leah-thomas.html"><img src="assets/img/episodes/leah-thomas.webp" alt="Episode artwork: Katherine with guest Leah Thomas" width="640" height="640"></a>
+    <article class="nowplaying">
+      <a class="video" href="https://www.youtube.com/watch?v=N6IzzKikyJI" data-video="N6IzzKikyJI" style="view-transition-name: video-leah-thomas" aria-label="Play the video: Leah Thomas on The Sincerely Show"><img src="assets/img/video/leah-thomas.webp" alt="" width="960" height="540" loading="lazy"><span class="video__play">Watch the conversation</span></a>
       <div>
-        <p class="kicker">Latest conversation, with Leah Thomas</p>
+        <p class="kicker">Latest conversation, November 6, 2026</p>
         <h3><a href="show-leah-thomas.html">How We Treat the Earth Mirrors How We Treat Each Other</a></h3>
-        <p>Leah Thomas lines the ceiling with vintage parachutes so that everyone underneath them can picture the world they are building together. She is an environmental author, advocate, and content creator who works at the intersection of climate and culture. She hosts Earth Sessions climate concerts, is finishing a book on ecofeminism called Earth as Mother, and runs a local crafting club where people learn to mend and sew, because joy and sustainable skill-building belong together.</p>
+        <p class="nowplaying__hook">She lines the ceiling with parachutes so we can imagine the world we are building.</p>
+        <p class="nowplaying__meta">With Leah Thomas, 56 minutes</p>
         <iframe class="player" src="https://open.spotify.com/embed/episode/6noFY1lY5xv2XF4hJItmw7?utm_source=generator&amp;theme=0" title="Listen: Leah Thomas on The Sincerely Show" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-        <div class="actions">
-          <a class="btn" href="show-leah-thomas.html">About this conversation</a>
-          <a class="btn btn--line" href="https://www.youtube.com/@Sincerelyinc">Watch on YouTube</a>
-        </div>
+        <div class="actions"><a class="btn btn--light" href="show-leah-thomas.html">Read the story behind it</a></div>
       </div>
     </article>
     <div class="ep-grid ep-grid--row">
-<a class="ep" href="show-john-abbott.html" data-search="john abbott the perfection in the perceived imperfection john abbott builds a business shaped like a solar system. human connection purpose" data-tags="human connection|purpose"><span class="ep__cover"><img src="assets/img/episodes/john-abbott.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">John Abbott</span><span class="ep__title">The Perfection in the Perceived Imperfection</span></a>
-<a class="ep" href="show-judy-wicks.html" data-search="judy wicks building the beloved community, one fort at a time she has spent a lifetime building forts big enough to hold everyone. care economy community" data-tags="care economy|community"><span class="ep__cover"><img src="assets/img/episodes/judy-wicks.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Judy Wicks</span><span class="ep__title">Building the Beloved Community, One Fort at a Time</span></a>
-<a class="ep" href="show-micky-hoogendijk.html" data-search="micky hoogendijk vulnerability is the strength, and the art of creating space to move forward she places strength and vulnerability side by side and calls them one thing. creativity healing" data-tags="creativity|healing"><span class="ep__cover"><img src="assets/img/episodes/micky-hoogendijk.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Micky Hoogendijk</span><span class="ep__title">Vulnerability Is the Strength, and the Art of Creating Space to Move Forward</span></a>
-<a class="ep" href="show-patricia-gagic.html" data-search="patricia gagic in gray is where all potential waits in gray is where all the potential waits. community creativity healing purpose" data-tags="community|creativity|healing|purpose"><span class="ep__cover"><img src="assets/img/episodes/patricia-gagic.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Patricia Gagic</span><span class="ep__title">In Gray Is Where All Potential Waits</span></a>
+<a class="ep" href="show-john-abbott.html" data-findable data-search="john abbott the perfection in the perceived imperfection john abbott builds a business shaped like a solar system. human connection purpose" data-tags="human connection|purpose"><span class="ep__cover" style="view-transition-name: ep-john-abbott"><img src="assets/img/episodes/john-abbott.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">John Abbott</span><span class="ep__title">The Perfection in the Perceived Imperfection</span></a>
+<a class="ep" href="show-judy-wicks.html" data-findable data-search="judy wicks building the beloved community, one fort at a time she has spent a lifetime building forts big enough to hold everyone. care economy community" data-tags="care economy|community"><span class="ep__cover" style="view-transition-name: ep-judy-wicks"><img src="assets/img/episodes/judy-wicks.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Judy Wicks</span><span class="ep__title">Building the Beloved Community, One Fort at a Time</span></a>
+<a class="ep" href="show-micky-hoogendijk.html" data-findable data-search="micky hoogendijk vulnerability is the strength, and the art of creating space to move forward she places strength and vulnerability side by side and calls them one thing. creativity healing" data-tags="creativity|healing"><span class="ep__cover" style="view-transition-name: ep-micky-hoogendijk"><img src="assets/img/episodes/micky-hoogendijk.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Micky Hoogendijk</span><span class="ep__title">Vulnerability Is the Strength, and the Art of Creating Space to Move Forward</span></a>
+<a class="ep" href="show-patricia-gagic.html" data-findable data-search="patricia gagic in gray is where all potential waits in gray is where all the potential waits. community creativity healing purpose" data-tags="community|creativity|healing|purpose"><span class="ep__cover" style="view-transition-name: ep-patricia-gagic"><img src="assets/img/episodes/patricia-gagic.webp" alt="" width="640" height="640" loading="lazy"></span><span class="ep__guest">Patricia Gagic</span><span class="ep__title">In Gray Is Where All Potential Waits</span></a>
     </div>
     <div class="guestbook">
       <p class="kicker">Who has sat in the chair across from Katherine</p>
-      <p><a href="show-leah-thomas.html">Leah Thomas</a>, <a href="show-john-abbott.html">John Abbott</a>, <a href="show-judy-wicks.html">Judy Wicks</a>, <a href="show-micky-hoogendijk.html">Micky Hoogendijk</a>, <a href="show-patricia-gagic.html">Patricia Gagic</a>, <a href="show-carlos-delgados-and-craig-alexander.html">Carlos Delgado and Craig Alexander</a>, <a href="show-melissa-bernstein.html">Melissa Bernstein</a>, <a href="show-eric-farewell.html">Eric Farewell</a>, <a href="show-jennifer-hill.html">Jennifer Hill</a>, <a href="show-chip-conley.html">Chip Conley</a>, <a href="show-florence-shaffer.html">Florence Shaffer</a>, <a href="show-tom-lenoble.html">Tom LeNoble</a>, <a href="show-master-mingtong-gu.html">Master Mingtong Gu</a>, <a href="show-jem-fuller.html">Jem Fuller</a>, <a href="show-debra-poneman.html">Debra Poneman</a>, <a href="show-robyne-hanley-dafoe.html">Dr. Robyne Hanley-Dafoe</a>, <a href="show-eila-park-robertson.html">Eila Park Robertson</a>, <a href="show-anne-marie-slaughter.html">Anne-Marie Slaughter</a>, <a href="show-joanna-barsh.html">Joanna Barsh</a>, <a href="show-colin-campbell.html">Colin Campbell</a>, <a href="show-dr-john-izzo.html">Dr. John Izzo</a>, <a href="show-sophie-gregoire.html">Sophie Grégoire</a>, <a href="show-delphine-le-serre.html">Dr. Delphine Le Serre</a>, <a href="show-amy-elizabeth-fox.html">Amy Elizabeth Fox</a>.</p>
+      <p class="guestbook__names"><a href="show-leah-thomas.html" data-thumb="assets/img/episodes/thumbs/leah-thomas.webp">Leah Thomas</a>, <a href="show-john-abbott.html" data-thumb="assets/img/episodes/thumbs/john-abbott.webp">John Abbott</a>, <a href="show-judy-wicks.html" data-thumb="assets/img/episodes/thumbs/judy-wicks.webp">Judy Wicks</a>, <a href="show-micky-hoogendijk.html" data-thumb="assets/img/episodes/thumbs/micky-hoogendijk.webp">Micky Hoogendijk</a>, <a href="show-patricia-gagic.html" data-thumb="assets/img/episodes/thumbs/patricia-gagic.webp">Patricia Gagic</a>, <a href="show-carlos-delgados-and-craig-alexander.html" data-thumb="assets/img/episodes/thumbs/carlos-delgados-and-craig-alexander.webp">Carlos Delgado and Craig Alexander</a>, <a href="show-melissa-bernstein.html" data-thumb="assets/img/episodes/thumbs/melissa-bernstein.webp">Melissa Bernstein</a>, <a href="show-eric-farewell.html" data-thumb="assets/img/episodes/thumbs/eric-farewell.webp">Eric Farewell</a>, <a href="show-jennifer-hill.html" data-thumb="assets/img/episodes/thumbs/jennifer-hill.webp">Jennifer Hill</a>, <a href="show-chip-conley.html" data-thumb="assets/img/episodes/thumbs/chip-conley.webp">Chip Conley</a>, <a href="show-florence-shaffer.html" data-thumb="assets/img/episodes/thumbs/florence-shaffer.webp">Florence Shaffer</a>, <a href="show-tom-lenoble.html" data-thumb="assets/img/episodes/thumbs/tom-lenoble.webp">Tom LeNoble</a>, <a href="show-master-mingtong-gu.html" data-thumb="assets/img/episodes/thumbs/master-mingtong-gu.webp">Master Mingtong Gu</a>, <a href="show-jem-fuller.html" data-thumb="assets/img/episodes/thumbs/jem-fuller.webp">Jem Fuller</a>, <a href="show-debra-poneman.html" data-thumb="assets/img/episodes/thumbs/debra-poneman.webp">Debra Poneman</a>, <a href="show-robyne-hanley-dafoe.html" data-thumb="assets/img/episodes/thumbs/robyne-hanley-dafoe.webp">Dr. Robyne Hanley-Dafoe</a>, <a href="show-eila-park-robertson.html" data-thumb="assets/img/episodes/thumbs/eila-park-robertson.webp">Eila Park Robertson</a>, <a href="show-anne-marie-slaughter.html" data-thumb="assets/img/episodes/thumbs/anne-marie-slaughter.webp">Anne-Marie Slaughter</a>, <a href="show-joanna-barsh.html" data-thumb="assets/img/episodes/thumbs/joanna-barsh.webp">Joanna Barsh</a>, <a href="show-colin-campbell.html" data-thumb="assets/img/episodes/thumbs/colin-campbell.webp">Colin Campbell</a>, <a href="show-dr-john-izzo.html" data-thumb="assets/img/episodes/thumbs/dr-john-izzo.webp">Dr. John Izzo</a>, <a href="show-sophie-gregoire.html" data-thumb="assets/img/episodes/thumbs/sophie-gregoire.webp">Sophie Grégoire</a>, <a href="show-delphine-le-serre.html" data-thumb="assets/img/episodes/thumbs/delphine-le-serre.webp">Dr. Delphine Le Serre</a>, <a href="show-amy-elizabeth-fox.html" data-thumb="assets/img/episodes/thumbs/amy-elizabeth-fox.webp">Amy Elizabeth Fox</a>.</p>
     </div>
   </div>
 </section>
@@ -189,8 +188,9 @@
         <div><dt>15 million</dt><dd>clients served by the teams she led</dd></div>
         <div><dt>80,000</dt><dd>colleagues heard her affirm her gender in 2019</dd></div>
       </dl>
+      <blockquote class="pull" style="margin-top: 2.4rem">&ldquo;Most of us have forgotten our own wholeness.&rdquo;</blockquote>
       <div class="actions">
-        <a class="btn btn--line" href="katherine.html">Read Katherine's story</a>
+        <a class="btn btn--line" href="katherine.html">Read Katherine’s story</a>
         <a class="btn btn--line" href="speaking.html">Invite her to speak</a>
       </div>
     </div>
@@ -230,10 +230,10 @@
     <div class="split__copy">
       <p class="kicker">The memoir</p>
       <h2 id="book-title">Sincerely, Katherine.</h2>
-      <p class="lede">One woman's honest account of finding her way home to herself while leading at the highest levels of corporate life.</p>
+      <p class="lede">One woman’s honest account of finding her way home to herself while leading at the highest levels of corporate life.</p>
       <p>A story of secrets kept and finally told, and of what leadership looks like from wholeness instead of fear. Offered in case it helps you find your own way home.</p>
       <blockquote class="pull">
-        &ldquo;Her story might not be yours, but don't be fooled, its lessons are universally ours.&rdquo;
+        &ldquo;Her story might not be yours, but don’t be fooled, its lessons are universally ours.&rdquo;
         <cite>Sophie Gr&eacute;goire Trudeau, bestselling author of <em>Closer Together</em></cite>
       </blockquote>
       <div class="actions">
@@ -274,7 +274,7 @@
   </div>
 </section>
 
-<section class="band" aria-labelledby="stay-title">
+<section class="band band--parchment" aria-labelledby="stay-title">
   <div class="wrap split">
     <div class="split__copy">
       <h2 id="stay-title">Please stay.</h2>
@@ -282,15 +282,16 @@
       <p>You will be the first to know when new conversations arrive, when gatherings are announced, and when the doors open at the farm.</p>
       <form class="inline-form inline-form--light" data-preview="Thank you. This is a concept preview, so nothing was sent or saved." style="margin-top: 2rem">
         <label class="visually-hidden" for="stay-email">Email address</label>
-        <input id="stay-email" type="email" placeholder="Your email address" required>
+        <input id="stay-email" type="email" autocomplete="email" placeholder="Your email address" required>
         <button class="btn" type="submit">Send me the letters</button>
         <p class="form-note" role="status"></p>
       </form>
       <p style="margin-top: 1.4rem"><a class="link" href="letters.html">Read all 10 letters</a></p>
     </div>
     <article class="letter">
-      <h3>The black sheep.</h3>
-      <time>This week's letter, November 10, 2026</time>
+      <svg class="postmark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pm-top" d="M 20 60 A 40 40 0 0 1 100 60"/><path id="pm-bottom" d="M 12 60 A 48 48 0 0 0 108 60"/></defs><circle cx="60" cy="60" r="57" stroke-width="2"/><circle cx="60" cy="60" r="33" stroke-width="1.2"/><text font-size="9.4" letter-spacing="1.5"><textPath href="#pm-top" startOffset="50%" text-anchor="middle">SINCERELY LETTERS</textPath></text><text font-size="8.2" letter-spacing="1.5"><textPath href="#pm-bottom" startOffset="50%" text-anchor="middle">FROM KATHERINE</textPath></text><text x="60" y="59" text-anchor="middle" font-size="14.5">10 NOV</text><text x="60" y="74" text-anchor="middle" font-size="10.5">2026</text></svg>
+      <h3 style="view-transition-name: letter-the-black-sheep">The black sheep.</h3>
+      <time>This week’s letter, November 10, 2026</time>
       <p>A few days ago, I was talking with a friend, someone I care about and deeply admire. We were talking about family, about the things we carry through our lives, and about her journey of breaking a cycle of intergenerational trauma.</p>
       <p>At one point, she referred to herself as the black sheep of the family.</p>
       <p>Those words stopped me. I have never seen her as a black sheep. I see an extraordinary mother, an incredibly curious, creative and talented human being, and someone who is beautiful inside and out. Someone who has found the courage to journey deeply within herself, to embrace more of who she truly is, and to live from that place. Her essence. Her uniqueness. Her beauty.</p>
@@ -301,7 +302,7 @@
 </section>
 
 <section class="farm" aria-label="Maison Millefleurs">
-  <img src="assets/img/farm-roses.webp" alt="Roses and lavender in bloom at Maison Millefleurs" width="1800" height="1146" loading="lazy">
+  <img src="assets/img/farm-roses.webp" alt="Roses and lavender in bloom" width="1800" height="1146" loading="lazy">
   <div class="wrap">
     <p>Sincerely lives at Maison Millefleurs, a lavender and honeybee farm in Prince Edward County, Ontario.</p>
   </div>
@@ -311,7 +312,7 @@
   <div class="wrap">
     <div class="footer__signoff">
       <p>Sincerely,</p>
-      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126">
+      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126" loading="lazy">
     </div>
     <div class="footer__cols">
       <div>
@@ -320,6 +321,7 @@
           <li><a href="show.html">The Sincerely Show</a></li>
           <li><a href="letters.html">Sincerely Letters</a></li>
           <li><a href="book.html">The memoir</a></li>
+          <li><a href="library.html">The Library</a></li>
           <li><a href="experience.html#table">Salons and gatherings</a></li>
         </ul>
       </div>

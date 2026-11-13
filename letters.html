@@ -11,10 +11,8 @@
 <meta property="og:title" content="Sincerely Letters | A weekly letter from Katherine Dudtschak">
 <meta property="og:description" content="Once a week, from Katherine&#x27;s desk to your inbox. Read the letters and have them find you.">
 <meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#3A2F4E">
+<meta name="theme-color" content="#2A2140">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +27,12 @@
     <a class="brand" href="index.html" aria-label="Sincerely, home"><img src="assets/img/logo-rose.png" alt="Sincerely" width="590" height="126"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="experience.html" aria-current="page">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="experience.html#table">Salons and gatherings</a></div></div>
+      <div class="nav__item"><a class="nav__link" href="experience.html" aria-current="page">Experience</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Experience menu"></button><div class="nav__menu"><a href="show.html">The Sincerely Show</a><a href="letters.html">Sincerely Letters</a><a href="book.html">The memoir</a><a href="library.html">The Library</a><a href="experience.html#table">Salons and gatherings</a></div></div>
       <a class="nav__link" href="human.html">Sincerely Human</a>
       <div class="nav__item"><a class="nav__link" href="work.html">Work with Sincerely</a><button class="nav__caret" type="button" aria-expanded="false" aria-label="Show the Work with Sincerely menu"></button><div class="nav__menu"><a href="work.html#dialogue">Sincerely Dialogue</a><a href="speaking.html">Speaking</a><a href="work.html#learning">The learning series</a><a href="work.html#advisory">Sincerely Advisory</a></div></div>
       <a class="nav__link" href="foundation.html">Foundation</a>
       <a class="nav__link" href="katherine.html">Katherine</a>
+      <a class="nav__search" href="library.html" aria-label="Search the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search the library</span></a>
       <a class="btn" href="work.html#conversation">Begin a conversation</a>
     </nav>
   </div>
@@ -43,10 +42,10 @@
   <div class="wrap pagehead__grid">
     <div>
       <h1>Sincerely Letters</h1>
-      <p class="lede">Once a week, from Katherine's desk to your inbox. She writes the way she would write to someone she has not seen in a while but thinks of often.</p>
+      <p class="lede">Once a week, from Katherine’s desk to your inbox. She writes the way she would write to someone she has not seen in a while but thinks of often.</p>
       <form class="inline-form inline-form--light" data-preview="Thank you. This is a concept preview, so nothing was sent or saved." style="margin-top: 2rem; max-width: 560px">
         <label class="visually-hidden" for="letters-email">Email address</label>
-        <input id="letters-email" type="email" placeholder="Your email address" required>
+        <input id="letters-email" type="email" autocomplete="email" placeholder="Your email address" required>
         <button class="btn" type="submit">Send me the letters</button>
         <p class="form-note" role="status"></p>
       </form>
@@ -63,8 +62,9 @@
       <p>Sometimes it is simply what she saw from the window, out over the lavender.</p>
     </div>
     <article class="letter">
-      <h3>The black sheep.</h3>
-      <time>This week's letter, November 10, 2026</time>
+      <svg class="postmark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pm-top" d="M 20 60 A 40 40 0 0 1 100 60"/><path id="pm-bottom" d="M 12 60 A 48 48 0 0 0 108 60"/></defs><circle cx="60" cy="60" r="57" stroke-width="2"/><circle cx="60" cy="60" r="33" stroke-width="1.2"/><text font-size="9.4" letter-spacing="1.5"><textPath href="#pm-top" startOffset="50%" text-anchor="middle">SINCERELY LETTERS</textPath></text><text font-size="8.2" letter-spacing="1.5"><textPath href="#pm-bottom" startOffset="50%" text-anchor="middle">FROM KATHERINE</textPath></text><text x="60" y="59" text-anchor="middle" font-size="14.5">10 NOV</text><text x="60" y="74" text-anchor="middle" font-size="10.5">2026</text></svg>
+      <h3 style="view-transition-name: letter-the-black-sheep">The black sheep.</h3>
+      <time>This week’s letter, November 10, 2026</time>
       <p>A few days ago, I was talking with a friend, someone I care about and deeply admire. We were talking about family, about the things we carry through our lives, and about her journey of breaking a cycle of intergenerational trauma.</p>
       <p>At one point, she referred to herself as the black sheep of the family.</p>
       <p>Those words stopped me. I have never seen her as a black sheep. I see an extraordinary mother, an incredibly curious, creative and talented human being, and someone who is beautiful inside and out. Someone who has found the courage to journey deeply within herself, to embrace more of who she truly is, and to live from that place. Her essence. Her uniqueness. Her beauty.</p>
@@ -78,16 +78,16 @@
   <div class="wrap">
     <h2 id="archive-title" style="margin-bottom: clamp(1.6rem, 3vw, 2.6rem)">All 10 letters</h2>
     <ol class="letterlist" reversed>
-      <li><a class="letterrow" href="letter-the-black-sheep.html"><time>November 10, 2026</time><strong>The black sheep.</strong><span>A few days ago, I was talking with a friend, someone I care about and deeply admire. We were talking about family, about the things we carry through our lives, and about her journey of...</span></a></li>
-      <li><a class="letterrow" href="letter-running-away-from-home.html"><time>November 3, 2026</time><strong>Running away from home...</strong><span>Remember wanting to run away from home? To escape something?</span></a></li>
-      <li><a class="letterrow" href="letter-human-uniqueness.html"><time>October 27, 2026</time><strong>Human Uniqueness.</strong><span>This past Monday, I had the honour and privilege of joining the Human Resources Professionals Association (HRPA) for its annual Summit, The Human Advantage, Canada’s largest gathering of...</span></a></li>
-      <li><a class="letterrow" href="letter-sacred.html"><time>October 20, 2026</time><strong>Sacred.</strong><span>What does sacred mean? What is sacred?</span></a></li>
-      <li><a class="letterrow" href="letter-is-this-me.html"><time>October 13, 2026</time><strong>Is this me?</strong><span>On a recent Friday evening at Decanter, my friend Karen Palmer was sitting at her typewriter, writing poems for the people gathered there. It was one of the final weeks of this special...</span></a></li>
-      <li><a class="letterrow" href="letter-an-exchange-of-love.html"><time>October 6, 2026</time><strong>An exchange of love.</strong><span>This week, I had the honour of joining my friend Susan’s book club at her cottage north of Toronto. What a beautiful group of women. Susan had invited me to also join them for a sleepover...</span></a></li>
-      <li><a class="letterrow" href="letter-we-love-and-live-on-a-life-lived-sincerely.html"><time>September 29, 2026</time><strong>We love and live on: a life lived sincerely.</strong><span>A tribute to Cindy Clark of team Sincerely and her son, the late Corey Clark, September 26th, 1992 – December 29th, 2007.</span></a></li>
-      <li><a class="letterrow" href="letter-a-melody-of-unconditional-beauty.html"><time>September 22, 2026</time><strong>A melody of unconditional beauty.</strong><span>The hibiscus flowers are blooming in the garden, and the roses are beginning to flower again too.</span></a></li>
-      <li><a class="letterrow" href="letter-lessons-of-peter-pumpkinhead.html"><time>September 15, 2026</time><strong>Lessons of Peter Pumpkinhead.</strong><span>I’m amazed by how music speaks to us.</span></a></li>
-      <li><a class="letterrow" href="letter-never-alone.html"><time>September 8, 2026</time><strong>Never Alone.</strong><span>I grew up on my parents’ farm outside St. Marys, Ontario, Canada.</span></a></li>
+      <li><a class="letterrow" href="letter-the-black-sheep.html"><time>November 10, 2026</time><strong>The black sheep.</strong><span>A few days ago, I was talking with a friend, someone I care about and deeply admire. We were talking about family, about the things we carry through our lives, and about her journey of…</span></a></li>
+      <li><a class="letterrow" href="letter-running-away-from-home.html"><time>November 3, 2026</time><strong style="view-transition-name: letter-running-away-from-home">Running away from home…</strong><span>Remember wanting to run away from home? To escape something?</span></a></li>
+      <li><a class="letterrow" href="letter-human-uniqueness.html"><time>October 27, 2026</time><strong style="view-transition-name: letter-human-uniqueness">Human Uniqueness.</strong><span>This past Monday, I had the honour and privilege of joining the Human Resources Professionals Association (HRPA) for its annual Summit, The Human Advantage, Canada’s largest gathering of…</span></a></li>
+      <li><a class="letterrow" href="letter-sacred.html"><time>October 20, 2026</time><strong style="view-transition-name: letter-sacred">Sacred.</strong><span>What does sacred mean? What is sacred?</span></a></li>
+      <li><a class="letterrow" href="letter-is-this-me.html"><time>October 13, 2026</time><strong style="view-transition-name: letter-is-this-me">Is this me?</strong><span>On a recent Friday evening at Decanter, my friend Karen Palmer was sitting at her typewriter, writing poems for the people gathered there. It was one of the final weeks of this special…</span></a></li>
+      <li><a class="letterrow" href="letter-an-exchange-of-love.html"><time>October 6, 2026</time><strong style="view-transition-name: letter-an-exchange-of-love">An exchange of love.</strong><span>This week, I had the honour of joining my friend Susan’s book club at her cottage north of Toronto. What a beautiful group of women. Susan had invited me to also join them for a sleepover…</span></a></li>
+      <li><a class="letterrow" href="letter-we-love-and-live-on-a-life-lived-sincerely.html"><time>September 29, 2026</time><strong style="view-transition-name: letter-we-love-and-live-on-a-life-lived-sincerely">We love and live on: a life lived sincerely.</strong><span>A tribute to Cindy Clark of team Sincerely and her son, the late Corey Clark, September 26th, 1992 – December 29th, 2007.</span></a></li>
+      <li><a class="letterrow" href="letter-a-melody-of-unconditional-beauty.html"><time>September 22, 2026</time><strong style="view-transition-name: letter-a-melody-of-unconditional-beauty">A melody of unconditional beauty.</strong><span>The hibiscus flowers are blooming in the garden, and the roses are beginning to flower again too.</span></a></li>
+      <li><a class="letterrow" href="letter-lessons-of-peter-pumpkinhead.html"><time>September 15, 2026</time><strong style="view-transition-name: letter-lessons-of-peter-pumpkinhead">Lessons of Peter Pumpkinhead.</strong><span>I’m amazed by how music speaks to us.</span></a></li>
+      <li><a class="letterrow" href="letter-never-alone.html"><time>September 8, 2026</time><strong style="view-transition-name: letter-never-alone">Never Alone.</strong><span>I grew up on my parents’ farm outside St. Marys, Ontario, Canada.</span></a></li>
     </ol>
   </div>
 </section>
@@ -96,7 +96,7 @@
   <div class="wrap">
     <div class="footer__signoff">
       <p>Sincerely,</p>
-      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126">
+      <img src="assets/img/logo-cream.png" alt="Sincerely" width="590" height="126" loading="lazy">
     </div>
     <div class="footer__cols">
       <div>
@@ -105,6 +105,7 @@
           <li><a href="show.html">The Sincerely Show</a></li>
           <li><a href="letters.html">Sincerely Letters</a></li>
           <li><a href="book.html">The memoir</a></li>
+          <li><a href="library.html">The Library</a></li>
           <li><a href="experience.html#table">Salons and gatherings</a></li>
         </ul>
       </div>
