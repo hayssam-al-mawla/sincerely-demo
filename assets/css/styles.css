@@ -1598,6 +1598,14 @@ main:has(> .closing:last-child) + .site-footer { padding-top: clamp(20px, 3vw, 4
 .ribbon a:nth-child(even) { font-style: italic; color: var(--lavender-ink); }
 .ribbon a:hover { color: var(--rose-ink); }
 
+/* The bee. It sits by the lavender until the pointer moves, then follows it around the page.
+   Its picture has a clear background, so it needs no blending and reads on dark bands too. */
+.hero--live .portrait__bee { mix-blend-mode: normal; }
+.portrait__bee.is-away { visibility: hidden; }
+.bee { position: fixed; left: 0; top: 0; z-index: 80; pointer-events: none; opacity: 0; transition: opacity 0.25s; will-change: transform; }
+.bee.is-flying { opacity: 1; }
+.bee img { display: block; width: 100%; height: auto; }
+
 /* A video opened over the page. */
 .lightbox { width: min(1100px, 92vw); max-width: none; padding: 0; border: 0; background: none; overflow: visible; }
 .lightbox::backdrop { background: rgba(42, 33, 64, 0.9); }
@@ -1633,6 +1641,7 @@ main:has(> .closing:last-child) + .site-footer { padding-top: clamp(20px, 3vw, 4
 @keyframes beckon { 0% { box-shadow: 0 0 0 0 rgba(58, 47, 78, 0.45); } 70%, 100% { box-shadow: 0 0 0 16px rgba(58, 47, 78, 0); } }
 @keyframes glow { from { transform: translate(0, 0) scale(1); } to { transform: translate(-6%, 5%) scale(1.12); } }
 @keyframes fresh { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes buzz { from { transform: translateY(-1.5px) rotate(-2.5deg); } to { transform: translateY(1.5px) rotate(2.5deg); } }
 @keyframes header-shadow { to { box-shadow: 0 12px 30px -20px rgba(58, 47, 78, 0.55); } }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1665,6 +1674,9 @@ main:has(> .closing:last-child) + .site-footer { padding-top: clamp(20px, 3vw, 4
   .ribbon.is-still { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .ribbon.is-still .ribbon__set { animation: none; }
   .ribbon.is-still .ribbon__set + .ribbon__set { display: none; }
+
+  /* In flight the bee trembles a little, the way bees do. */
+  .bee.is-flying img { animation: buzz 0.11s linear infinite alternate; }
 
   /* "Pause the motion" holds everything that moves by itself. */
   .is-still .ribbon__set, .is-still .filmstrip__track, .is-still .hero__pic img, .is-still .hero--live::before,

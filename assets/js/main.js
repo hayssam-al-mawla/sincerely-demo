@@ -115,6 +115,115 @@
     }
   }
 
+  // ---------- The home page's bee follows the pointer ----------
+  // It waits on the lavender beside Katherine's portrait. When the pointer moves it takes off and
+  // flies after it, a little behind and to one side so it never covers what is being pointed at.
+  // Left alone for a while, or when the pointer leaves the window, it flies home again.
+
+  (function () {
+    var perch = document.querySelector('[data-hero] .portrait__bee');
+    var mouse = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!perch || !mouse || reduceMotion || !window.requestAnimationFrame) return;
+
+    var bee = document.createElement('span');
+    bee.className = 'bee';
+    bee.style.width = '46px';
+    bee.setAttribute('aria-hidden', 'true');
+    var picture = document.createElement('img');
+    picture.alt = '';
+    picture.src = perch.getAttribute('src');
+    bee.appendChild(picture);
+    document.body.appendChild(bee);
+
+    var x = 0, y = 0, vx = 0, vy = 0;      // where the bee is, and how fast it is going
+    var px = 0, py = 0;                      // where the pointer is
+    var moved = 0, last = 0, frame = null;
+    var flying = false, homing = false;
+    var turned = 1;                          // the drawing faces left; -1 turns it to face right
+    var ready = false;
+
+    // Its place by the lavender. On a narrow window that bee is not shown, so home is just above the top corner.
+    function home() {
+      var box = perch.getBoundingClientRect();
+      if (box.width) return { x: box.left, y: box.top, w: box.width };
+      return { x: window.innerWidth - 90, y: -90, w: 46 };
+    }
+
+    function takeOff() {
+      var spot = home();
+      bee.style.width = spot.w + 'px';
+      x = spot.x; y = spot.y; vx = 0; vy = 0;
+      flying = true;
+      perch.classList.add('is-away');
+      bee.classList.add('is-flying');
+      last = performance.now();
+      frame = requestAnimationFrame(fly);
+    }
+
+    function land() {
+      flying = false;
+      homing = false;
+      frame = null;
+      bee.classList.remove('is-flying');
+      perch.classList.remove('is-away');
+    }
+
+    function fly(now) {
+      var dt = Math.min(48, now - last) / 1000;
+      last = now;
+      var idle = now - moved;
+      if (still || idle > 9000) homing = true;
+
+      var goal;
+      if (homing) {
+        goal = home();
+      } else {
+        // Beside the pointer, below and to the right of it. Once the pointer rests, the bee idles in a slow loop.
+        var rest = idle > 500 ? 1 : 0;
+        goal = { x: px + 20 + rest * Math.cos(now / 560) * 10, y: py + 22 + rest * Math.sin(now / 370) * 8 };
+      }
+
+      // A soft spring: it lags behind, overshoots a little and settles.
+      var pull = homing ? 34 : 70, drag = homing ? 9 : 10.5;
+      vx += ((goal.x - x) * pull - vx * drag) * dt;
+      vy += ((goal.y - y) * pull - vy * drag) * dt;
+      x += vx * dt;
+      y += vy * dt;
+
+      var speed = Math.sqrt(vx * vx + vy * vy);
+      if (homing && speed < 25 && Math.abs(goal.x - x) < 3 && Math.abs(goal.y - y) < 3) {
+        land();
+        return;
+      }
+
+      // It faces the way it is going, leans into its speed and weaves a little while it travels.
+      if (vx > 60) turned = -1;
+      else if (vx < -60) turned = 1;
+      var lean = Math.max(-22, Math.min(22, vy * 0.035)) * turned * -1;
+      var weave = Math.min(1, speed / 500) * Math.sin(now / 70) * 5;
+      bee.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + (y + weave).toFixed(1) + 'px,0) rotate(' + lean.toFixed(1) + 'deg) scaleX(' + turned + ')';
+      frame = requestAnimationFrame(fly);
+    }
+
+    // The page's own opening plays first; the bee joins once it has settled.
+    setTimeout(function () { ready = true; }, 2400);
+
+    document.addEventListener('pointermove', function (event) {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      px = event.clientX;
+      py = event.clientY;
+      moved = performance.now();
+      if (!ready || still) return;
+      homing = false;
+      if (!flying) takeOff();
+    }, { passive: true });
+
+    // The pointer has left the window: back to the lavender.
+    document.documentElement.addEventListener('mouseleave', function () { homing = true; });
+    // A tab left in the background should not keep a bee in the air.
+    document.addEventListener('visibilitychange', function () { if (document.hidden) homing = true; });
+  })();
+
   // ---------- "Pause the motion": everything that moves by itself holds still ----------
 
   document.querySelectorAll('[data-motion]').forEach(function (button) {
