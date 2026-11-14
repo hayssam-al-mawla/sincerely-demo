@@ -38,38 +38,30 @@
   </div>
 </header>
 <main id="main">
-<section class="pagehead">
-  <div class="wrap pagehead__grid">
-    <div>
-      <p class="kicker">The Library</p>
-      <h1>A thousand stories</h1>
-      <p class="lede">The living archive of human becoming. Bright, honest stories of people finding their way home, gathered here so you can find yourself in them.</p>
-      <ul class="tally" aria-label="On the shelves today">
-        <li><strong>25</strong><span>conversations</span></li>
-        <li><strong>10</strong><span>letters</span></li>
-        <li><strong>1</strong><span>memoir</span></li>
-      </ul>
-    </div>
-    <div class="pagehead__art"><img src="assets/img/art-shelf.webp" alt="" width="1100" height="749"></div>
-  </div>
-</section>
-
-<section class="band band--parchment" aria-labelledby="shelves-title">
-  <div class="wrap" data-finder="story" data-finder-plural="stories">
-    <h2 id="shelves-title" class="visually-hidden">Search the shelves</h2>
-    <div class="finder finder--large">
+<div data-finder="story" data-finder-plural="stories" data-finder-index="assets/search.json">
+<section class="pagehead libhead">
+  <div class="wrap">
+    <div class="libhead__top">
       <div>
-        <label class="visually-hidden" for="library-search">Search the library by guest, title or theme</label>
-        <input id="library-search" type="search" placeholder="Search by guest, title or theme" autocomplete="off" data-finder-input>
+        <p class="kicker">The Library</p>
+        <h1>A thousand stories</h1>
       </div>
-      <div>
-        <div class="chips" role="group" aria-label="Filter by kind of story" data-chip-group="type">
+      <img class="libhead__art" src="assets/img/art-shelf.webp" alt="" width="1100" height="749">
+    </div>
+    <p class="lede">The living archive of human becoming. Bright, honest stories of people finding their way home, gathered here so you can find yourself in them.</p>
+    <div class="libsearch">
+      <label class="visually-hidden" for="library-search">Search the library</label>
+      <input id="library-search" type="search" placeholder="Search every story" autocomplete="off" data-finder-input>
+      <p class="libsearch__hint">The search reads inside every conversation and letter: 82,000 words so far. Try <button type="button" class="tryword" data-try="grief">grief</button>, <button type="button" class="tryword" data-try="lavender">lavender</button> or <button type="button" class="tryword" data-try="belonging">belonging</button>.</p>
+    </div>
+    <div class="libhead__filters">
+      <div class="chips" role="group" aria-label="Filter by kind of story" data-chip-group="type">
         <button type="button" class="chip is-on" data-value="">Everything</button>
         <button type="button" class="chip" data-value="conversation">Conversations</button>
         <button type="button" class="chip" data-value="letter">Letters</button>
         <button type="button" class="chip" data-value="book">The memoir</button>
-        </div>
-        <div class="chips" role="group" aria-label="Filter by theme" data-chip-group="tags" style="margin-top: 10px">
+      </div>
+      <div class="chips" role="group" aria-label="Filter by theme" data-chip-group="tags">
         <button type="button" class="chip is-on" data-value="">All themes</button>
         <button type="button" class="chip" data-value="healing">Healing</button>
         <button type="button" class="chip" data-value="purpose">Purpose</button>
@@ -79,8 +71,20 @@
         <button type="button" class="chip" data-value="creativity">Creativity</button>
         <button type="button" class="chip" data-value="grief &amp; loss">Grief &amp; Loss</button>
         <button type="button" class="chip" data-value="women in leadership">Women in leadership</button>
-        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--parchment band--results" aria-labelledby="shelves-title">
+  <div class="wrap">
+    <div class="results__head">
+      <h2 id="shelves-title" class="h3">On the shelves today</h2>
+      <ul class="tally tally--inline" aria-label="Counts">
+        <li><strong>25</strong><span>conversations</span></li>
+        <li><strong>10</strong><span>letters</span></li>
+        <li><strong>1</strong><span>memoir</span></li>
+      </ul>
     </div>
     <p class="finder__status" role="status" data-finder-status></p>
     <div class="shelf">
@@ -121,9 +125,10 @@
       <a class="volume" href="show-amy-elizabeth-fox.html" data-findable data-type="conversation" data-tags="grief &amp; loss|healing|leadership|transformation" data-search="amy elizabeth fox bringing love into the rooms where business gets done she makes the most powerful people in the room drop their armour. conversation episode grief &amp; loss healing leadership transformation"><img class="volume__thumb" style="view-transition-name: ep-amy-elizabeth-fox" src="assets/img/episodes/thumbs/amy-elizabeth-fox.webp" alt="" width="300" height="300" loading="lazy"><span><span class="volume__kind">Conversation with Amy Elizabeth Fox</span><span class="volume__title">Bringing Love Into the Rooms Where Business Gets Done</span><span class="volume__note">May 21, 2026, 54 minutes</span></span></a>
       <a class="volume" href="show-katherine-dudtschak.html" data-findable data-type="conversation" data-tags="identity|leadership|transformation" data-search="katherine dudtschak the woman who built sincerely she carried a fifty-year secret, and then she told 80,000 people the truth. conversation episode identity leadership transformation"><img class="volume__thumb" style="view-transition-name: ep-katherine-dudtschak" src="assets/img/episodes/thumbs/katherine-dudtschak.webp" alt="" width="300" height="300" loading="lazy"><span><span class="volume__kind">Conversation with Katherine Dudtschak</span><span class="volume__title">The Woman Who Built Sincerely</span><span class="volume__note">May 21, 2026, 76 minutes</span></span></a>
     </div>
-    <p class="serif-lede measure" style="margin-top: clamp(2.4rem, 5vw, 4rem)">Some stories are still being written. Some are waiting to be told. Some might be yours. There is always something new on the shelves.</p>
+    <p class="serif-lede measure" style="margin-top: clamp(2.4rem, 5vw, 4rem)">Some stories are still being written. Some are waiting to be told. Some might be yours. Stay as long as you like. There is always something new on the shelves.</p>
   </div>
 </section>
+</div>
 
 <section class="band band--plum band--tight letterband" aria-labelledby="library-letters-title">
   <div class="wrap letterband__grid">

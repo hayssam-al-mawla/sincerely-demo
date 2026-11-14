@@ -15,6 +15,7 @@ and Katherine Dudtschak.
 - `show-*.html`: one page per conversation, with the video, the Spotify player, the show
   notes and the written story.
 - `letter-*.html`: one page per letter.
-- `assets/`: one stylesheet, one script and the images.
+- `assets/`: one stylesheet, one script, the images, and `search.json`, the text of every
+  conversation and letter, which the Library's search reads the first time someone types.
 
 The pages are generated from templates and data kept outside this repository.

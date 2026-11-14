@@ -72,16 +72,84 @@
   document.querySelectorAll('[data-finder]').forEach(function (finder) {
     var input = finder.querySelector('[data-finder-input]');
     var status = finder.querySelector('[data-finder-status]');
-    var things = finder.querySelectorAll('[data-findable]');
+    var things = Array.prototype.slice.call(finder.querySelectorAll('[data-findable]'));
     var noun = finder.getAttribute('data-finder') || 'result';
     var plural = finder.getAttribute('data-finder-plural') || noun + 's';
     var picked = {};
 
+    // The Library can also look inside the stories. Their text arrives the first time someone searches.
+    var indexAddress = finder.getAttribute('data-finder-index');
+    var index = null;
+    var asked = false;
+
+    function loadIndex() {
+      if (!indexAddress || asked || !window.fetch) return;
+      asked = true;
+      fetch(indexAddress)
+        .then(function (response) { return response.ok ? response.json() : null; })
+        .then(function (data) { if (data) { index = data; apply(); } })
+        .catch(function () { /* The search still works on titles and themes. */ });
+    }
+
+    function inside(thing) {
+      var key = index && thing.getAttribute('href');
+      if (!key || !index[key]) return null;
+      if (typeof index[key] === 'string') index[key] = { text: index[key], low: index[key].toLowerCase() };
+      return index[key];
+    }
+
+    // The words around a match, cut at whole words.
+    function passage(entry, word) {
+      var at = entry.low.indexOf(word);
+      var from = Math.max(0, at - 70);
+      var to = Math.min(entry.text.length, at + word.length + 90);
+      while (from > 0 && /\S/.test(entry.text.charAt(from - 1))) from -= 1;
+      while (to < entry.text.length && /\S/.test(entry.text.charAt(to))) to += 1;
+      return {
+        before: (from > 0 ? '\u2026' : '') + entry.text.slice(from, at),
+        match: entry.text.slice(at, at + word.length),
+        after: entry.text.slice(at + word.length, to) + (to < entry.text.length ? '\u2026' : '')
+      };
+    }
+
+    function show(thing, entry, word) {
+      var line = thing.querySelector('.found');
+      if (!word) {
+        if (line) line.hidden = true;
+        return;
+      }
+      if (!line) {
+        line = document.createElement('span');
+        line.className = 'found';
+        thing.appendChild(line);
+      }
+      var bit = passage(entry, word);
+      var mark = document.createElement('mark');
+      mark.textContent = bit.match;
+      line.textContent = '';
+      line.appendChild(document.createTextNode(bit.before));
+      line.appendChild(mark);
+      line.appendChild(document.createTextNode(bit.after));
+      line.hidden = false;
+    }
+
     function apply() {
-      var words = input.value.trim().toLowerCase();
+      var words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
       var shown = 0;
       things.forEach(function (thing) {
-        var ok = !words || thing.getAttribute('data-search').indexOf(words) !== -1;
+        var card = thing.getAttribute('data-search');
+        var entry = inside(thing);
+        var ok = true;
+        var within = '';
+        // Every word has to be somewhere: on the card, or inside the story.
+        words.forEach(function (word) {
+          if (card.indexOf(word) !== -1) return;
+          if (entry && word.length > 2 && entry.low.indexOf(word) !== -1) {
+            if (!within) within = word;
+            return;
+          }
+          ok = false;
+        });
         Object.keys(picked).forEach(function (group) {
           if (!picked[group]) return;
           var values = '|' + (thing.getAttribute('data-' + group) || '') + '|';
@@ -89,14 +157,16 @@
         });
         thing.hidden = !ok;
         if (ok) shown += 1;
+        show(thing, entry, ok ? within : '');
       });
-      var filtering = words || Object.keys(picked).some(function (group) { return picked[group]; });
+      var filtering = words.length || Object.keys(picked).some(function (group) { return picked[group]; });
       if (!filtering) status.textContent = '';
       else if (shown === 0) status.textContent = 'Nothing matches. Try another word or a different filter.';
       else status.textContent = shown + ' ' + (shown === 1 ? noun : plural) + ' found.';
     }
 
-    input.addEventListener('input', apply);
+    input.addEventListener('focus', loadIndex);
+    input.addEventListener('input', function () { loadIndex(); apply(); });
     finder.querySelectorAll('[data-chip-group]').forEach(function (groupEl) {
       var group = groupEl.getAttribute('data-chip-group');
       var chips = groupEl.querySelectorAll('.chip');
@@ -113,9 +183,28 @@
       });
     });
 
+    // Suggested words fill the box in.
+    finder.querySelectorAll('[data-try]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        input.value = button.getAttribute('data-try');
+        loadIndex();
+        apply();
+      });
+    });
+
+    // "Open one at random" goes to any one of the things on the page.
+    var random = finder.querySelector('[data-random]');
+    if (random) {
+      random.hidden = false;
+      random.addEventListener('click', function () {
+        var pick = things[Math.floor(Math.random() * things.length)];
+        if (pick) window.location.href = pick.getAttribute('href');
+      });
+    }
+
     // A search can arrive in the address, e.g. library.html?q=grief
     var query = new URLSearchParams(window.location.search).get('q');
-    if (query) { input.value = query; apply(); }
+    if (query) { input.value = query; loadIndex(); apply(); }
 
     // "/" jumps to the search box, as on most libraries.
     document.addEventListener('keydown', function (event) {
@@ -126,13 +215,16 @@
 
   // ---------- Videos load only when asked for ----------
 
-  document.querySelectorAll('a.video[data-video]').forEach(function (link) {
+  document.querySelectorAll('a.video[data-video], a.video[data-vimeo]').forEach(function (link) {
     link.addEventListener('click', function (event) {
-      // Let a modified click (new tab, new window) go to YouTube as a normal link.
+      // Let a modified click (new tab, new window) go to YouTube or Vimeo as a normal link.
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
       event.preventDefault();
       var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + link.getAttribute('data-video') + '?autoplay=1&rel=0';
+      var vimeo = link.getAttribute('data-vimeo');
+      frame.src = vimeo
+        ? 'https://player.vimeo.com/video/' + vimeo + '?autoplay=1&dnt=1&title=0&byline=0&portrait=0'
+        : 'https://www.youtube-nocookie.com/embed/' + link.getAttribute('data-video') + '?autoplay=1&rel=0';
       frame.title = link.getAttribute('aria-label') || 'Video';
       frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       frame.allowFullscreen = true;
@@ -296,7 +388,7 @@
       });
     }
     // Starting a video quiets the sample, so the two never talk over each other.
-    document.querySelectorAll('a.video[data-video]').forEach(function (link) {
+    document.querySelectorAll('a.video[data-video], a.video[data-vimeo]').forEach(function (link) {
       link.addEventListener('click', function () { audio.pause(); });
     });
     paint();
@@ -424,6 +516,30 @@
       spine.addEventListener('pointerleave', function () { name(null); });
       spine.addEventListener('focus', function () { name(spine); });
       spine.addEventListener('blur', function () { name(null); });
+    });
+  });
+
+  // ---------- A form can arrive with a choice already made, e.g. work.html?about=A+book+club+visit ----------
+
+  document.querySelectorAll('select[data-from-address]').forEach(function (select) {
+    var wanted = new URLSearchParams(window.location.search).get(select.getAttribute('data-from-address'));
+    if (!wanted) return;
+    Array.prototype.forEach.call(select.options, function (option) {
+      if (option.text === wanted) select.value = option.value;
+    });
+  });
+
+  // ---------- A link can fill in a form field on its way to the form ("Ask about this talk") ----------
+
+  document.querySelectorAll('[data-pick]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var field = document.querySelector(link.getAttribute('data-pick'));
+      if (!field) return;
+      field.value = link.getAttribute('data-pick-value');
+      // Show which field changed, once the page has moved to it.
+      field.classList.remove('is-picked');
+      void field.offsetWidth;
+      field.classList.add('is-picked');
     });
   });
 

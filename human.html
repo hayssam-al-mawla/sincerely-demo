@@ -38,19 +38,24 @@
   </div>
 </header>
 <main id="main">
-<section class="pagehead">
-  <div class="wrap pagehead__grid">
-    <div>
+<section class="pagehead humanhead">
+  <div class="wrap">
+    <div class="humanhead__top">
       <h1>Sincerely Human</h1>
-      <p class="lede">The institute’s home for human inquiry: research, reflection, and the models and frameworks that explore shared humanity, human uniqueness, wholeness and transformation.</p>
+      <img class="humanhead__art" src="assets/img/art-hands.webp" alt="" width="1100" height="733">
+    </div>
+    <p class="inquiry">What does it mean to be human, what is uniquely and innately human, and how might we live, lead and organize together in ways that honour life?</p>
+    <div class="humanhead__foot">
+      <p class="lede">That question is the central inquiry of the institute, and Sincerely Human is where it is investigated: research, reflection, and the models and frameworks that explore shared humanity, human uniqueness, wholeness and transformation.</p>
       <ul class="subnav" aria-label="On this page">
         <li><a href="#architecture">The human architecture</a></li>
         <li><a href="#journey">How transformation happens</a></li>
         <li><a href="#crises">The crises of our time</a></li>
         <li><a href="#pillars">The Three Pillars</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#agenda">Ongoing work</a></li>
       </ul>
     </div>
-    <div class="pagehead__art"><img src="assets/img/art-hands.webp" alt="" width="1100" height="733"></div>
   </div>
 </section>
 
@@ -112,22 +117,60 @@
         <h3>Lived Experience Self</h3>
         <p>How essence shows up in the world. Aligned with essence, it becomes service. Disconnected from it, it becomes performance.</p>
       </div>
+      <p class="flowline">When this flow is blocked or inverted, suffering follows. When it is restored, wholeness emerges.</p>
       <p class="explorer__hint">Choose a circle or a description to see how they pair.</p>
     </div>
   </div>
 </section>
 
 <section class="band band--plum" id="journey" aria-labelledby="journey-title">
-  <div class="wrap">
+  <div class="wrap explorer">
     <div class="band__head band__head--split">
       <h2 id="journey-title">How transformation happens</h2>
       <p class="lede">The journey from performance to presence moves through three phases. It is not a straight line. We cross the bridge many times in a life, and each crossing deepens the return.</p>
     </div>
-    <ol class="steps">
-      <li><strong>Shaped</strong><span>How the current world builds humans. Identity fused to role, productivity and outside validation, with essence buried underneath the performance self.</span></li>
-      <li><strong>Crossing</strong><span>What happens when the performance self can no longer hold. Collapse as a portal, not a failure, and the difficult, necessary return to essence.</span></li>
-      <li><strong>Becoming</strong><span>Essence as organizing intelligence. Integration over a lifetime, living and leading from wholeness instead of fear.</span></li>
-    </ol>
+    <div class="diagram-frame">
+      <svg class="diagram diagram--journey" viewBox="0 0 1000 380" role="img" aria-labelledby="journey-svg-title journey-svg-desc">
+        <title id="journey-svg-title">From performance to presence</title>
+        <desc id="journey-svg-desc">One line runs from left to right through three phases. Through Shaped it is straight. Through Crossing it loops back on itself three times, each loop larger than the last. Through Becoming it rises in an easy wave and does not end.</desc>
+        <g data-part="shaped">
+          <rect x="0" y="0" width="330" height="380" fill="#C2B8CF" opacity="0.14"/>
+          <text x="165" y="70" text-anchor="middle" class="d-title d-light">Shaped</text>
+          <path d="M 40 250 L 330 250" fill="none" stroke="#C2B8CF" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="40" cy="250" r="8" fill="#C2B8CF"/>
+          <text x="165" y="318" text-anchor="middle" class="d-small d-light">identity fused to role</text>
+        </g>
+        <g data-part="crossing">
+          <rect x="335" y="0" width="330" height="380" fill="#D69096" opacity="0.2"/>
+          <text x="500" y="70" text-anchor="middle" class="d-title d-light">Crossing</text>
+          <path d="M 335 250 L 392 250 A 28 28 0 0 0 392 194 A 28 28 0 0 0 392 250 L 482 250 A 40 40 0 0 0 482 170 A 40 40 0 0 0 482 250 L 594 250 A 54 54 0 0 0 594 142 A 54 54 0 0 0 594 250 L 665 250" fill="none" stroke="#E9B5BA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="500" y="318" text-anchor="middle" class="d-small d-light">the performance self can no longer hold</text>
+        </g>
+        <g data-part="becoming">
+          <rect x="670" y="0" width="330" height="380" fill="#C4A24A" opacity="0.2"/>
+          <text x="835" y="70" text-anchor="middle" class="d-title d-light">Becoming</text>
+          <path d="M 670 250 C 730 250 750 204 812 204 S 890 168 944 158" fill="none" stroke="#DEC683" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="958" cy="155" r="3.5" fill="#DEC683"/>
+          <circle cx="971" cy="152" r="3" fill="#DEC683" opacity="0.7"/>
+          <circle cx="983" cy="150" r="2.5" fill="#DEC683" opacity="0.45"/>
+          <text x="835" y="318" text-anchor="middle" class="d-small d-light">essence as organizing intelligence</text>
+        </g>
+      </svg>
+    </div>
+    <div class="cards cards--3 journey__legend">
+      <div class="explorer__item" data-for="shaped" tabindex="0">
+        <h3>Shaped</h3>
+        <p>How the current world builds humans. Identity fused to role, productivity and external validation. Essence buried or inaccessible. The performance self that most of us construct to survive.</p>
+      </div>
+      <div class="explorer__item" data-for="crossing" tabindex="0">
+        <h3>Crossing</h3>
+        <p>The bridge zone. What happens when the performance self can no longer hold. Collapse as portal, not failure. The difficult, necessary return to essence, where identity dissolves faster than it can be replaced.</p>
+      </div>
+      <div class="explorer__item" data-for="becoming" tabindex="0">
+        <h3>Becoming</h3>
+        <p>Essence as organizing intelligence. Integration over a lifetime. A journey home that is never finished but always deepening. Living and leading from wholeness rather than fear.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -169,16 +212,17 @@
       </div>
       <div class="explorer__item" data-for="economic" tabindex="0">
         <h3>Economic</h3>
-        <p>Instability, inequality and burnout produced by productivity-driven models.</p>
+        <p>Instability, inequality and burnout produced by productivity-driven models. The need for regenerative approaches to work and value.</p>
       </div>
       <div class="explorer__item" data-for="social" tabindex="0">
         <h3>Social</h3>
-        <p>Fragmentation, polarization and the loss of shared meaning.</p>
+        <p>Fragmentation, polarization and the loss of shared meaning. The forgetting of how to hold difference without violence.</p>
       </div>
       <div class="explorer__item" data-for="information" tabindex="0">
         <h3>Information and disinformation</h3>
         <p>The fourth crisis surrounds the other three and speeds them up. AI is a powerful accelerant across all of it.</p>
       </div>
+      <p class="flowline">These outer crises mirror our inner imbalance. The path forward is not only systemic. It is personal.</p>
     </div>
   </div>
 </section>
@@ -256,9 +300,35 @@
       <div class="card explorer__item" data-for="roadmap" tabindex="0"><h3>Living Roadmap</h3><p>Strategy, capital, operating capacity, governance, capability, learning and adaptation, brought together in a living pathway.</p></div>
       <div class="card explorer__item" data-for="coherence" tabindex="0"><h3>Relational Coherence</h3><p>Presence, kindness, curiosity, empathy, compassion, deep listening and love shape how people encounter one another.</p></div>
       <div class="card explorer__item" data-for="leadership" tabindex="0"><h3>Leadership</h3><p>Leaders steward the whole field: creating conditions for contribution, exercising power with integrity and staying accountable for consequences.</p></div>
-      <div class="card card--night"><h3>What becomes possible</h3><p>Human wholeness and well-being, belonging and inclusion, coherent institutions, sustainable contribution, regeneration and harmony.</p></div>
+      <div class="card card--night"><h3>How to read it</h3><p>The model creates conditions for transformation. It does not manufacture innate potential or guarantee business outcomes.</p></div>
     </div>
+
+    <h3 class="possible__title">What becomes possible</h3>
+    <p class="measure">Interdependent fields of contribution, not a hierarchy of financial returns.</p>
+    <dl class="possible">
+      <div><dt>Human wholeness and well-being</dt><dd>Dignity, meaning, uniqueness, care and the fuller expression of potential.</dd></div>
+      <div><dt>Belonging and inclusion</dt><dd>Trust, relationships, social and economic participation, and shared flourishing.</dd></div>
+      <div><dt>Coherent institutions</dt><dd>Purpose, capability, resilience, accountability and trustworthy leadership.</dd></div>
+      <div><dt>Sustainable contribution</dt><dd>Effectiveness, innovation and economic viability as means to honour purpose.</dd></div>
+      <div><dt>Regeneration and harmony</dt><dd>Choices that respect ecosystems, interconnected life and future generations.</dd></div>
+    </dl>
     <div class="actions"><a class="btn" href="work.html">Bring this into your organization</a></div>
+  </div>
+</section>
+
+<section class="band" id="leadership" aria-labelledby="leadership-title">
+  <div class="wrap">
+    <div class="band__head band__head--split">
+      <h2 id="leadership-title">Leadership across organized human life</h2>
+      <p class="lede">Leadership is exercised wherever people organize purpose, relationships, power, resources and choices, not only in companies. It is exercised with or without formal authority.</p>
+    </div>
+    <dl class="domains">
+      <div><dt>Personal and community</dt><dd>Families, circles of care, teams, neighbourhoods, movements, cultural communities and other forms of shared life.</dd></div>
+      <div><dt>Civic and educational</dt><dd>Schools, universities, hospitals, not-for-profits, charities, municipalities, cities and public agencies.</dd></div>
+      <div><dt>Economic and institutional</dt><dd>Companies, cooperatives, social enterprises, professional bodies, banks, foundations and sector associations.</dd></div>
+      <div><dt>Public and international</dt><dd>Governments, Indigenous governments and Nations, countries, multilateral institutions and international cooperative systems.</dd></div>
+    </dl>
+    <p class="serif-lede measure" style="margin-top: 2.4rem">All these forms are relevant to Sincerely. None should be reduced to a corporate metaphor.</p>
   </div>
 </section>
 
@@ -270,6 +340,32 @@
       <p>These ways of knowing are met with intellectual humility and specificity. Neither is silently reduced to the terms of the other, and claims, interpretations and sources stay clearly distinguished.</p>
     </div>
     <img src="assets/img/art-books.webp" alt="" width="417" height="488" loading="lazy" style="mix-blend-mode: multiply; max-width: 340px; justify-self: center">
+  </div>
+</section>
+
+<section class="band" id="agenda" aria-labelledby="agenda-title">
+  <div class="wrap">
+    <div class="band__head band__head--split">
+      <h2 id="agenda-title">A living research agenda</h2>
+      <p class="lede">Sincerely Human is not a finished body of knowledge. Understanding earned through decades of practice, refined through reflection, and offered to those who want to go deeper.</p>
+    </div>
+    <dl class="agenda">
+      <div><dt>The Sincerely Human framework</dt><dd>Continued development and refinement of the models through application, feedback and inquiry. Publication of the framework in book form.</dd></div>
+      <div><dt>Integrated leadership</dt><dd>How essence-led living translates to organizational and institutional contexts. What does leadership look like when it flows from wholeness rather than fear?</dd></div>
+      <div><dt>Academic contribution</dt><dd>Potential thesis and dissertation work grounding these models in scholarly inquiry, bridging practitioner wisdom with academic rigour.</dd></div>
+      <div><dt>Publishing</dt><dd>Future books expanding on specific aspects of the framework, and contributions to journals and publications.</dd></div>
+    </dl>
+    <p class="measure" style="margin-top: 2rem">This research will be supported over time by the <a class="link" href="foundation.html">Sincerely Foundation</a>, so that it can develop with integrity rather than commercial pressure.</p>
+  </div>
+</section>
+
+<section class="band band--night closing" aria-label="A closing word">
+  <div class="wrap">
+    <p class="closing__lines"><span>The map is not the territory.</span> <span>But for those who want to understand the landscape, we offer what we have learned.</span></p>
+    <div class="actions">
+      <a class="btn btn--light" href="show.html">See the models in lived stories</a>
+      <a class="btn btn--ghost" href="work.html">Work with Sincerely</a>
+    </div>
   </div>
 </section>
 </main>

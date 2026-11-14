@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2A2140">
+<link rel="preload" as="image" href="assets/img/speaking-reel.webp" fetchpriority="high">
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,60 +39,103 @@
   </div>
 </header>
 <main id="main">
-<section class="pagehead">
-  <div class="wrap pagehead__grid">
-    <div>
+<section class="pagehead speakhead">
+  <div class="wrap speakhead__grid">
+    <div class="speakhead__title">
       <p class="kicker">Speaking</p>
       <h1 class="h1-statement">When Katherine takes the stage, something shifts in the room.</h1>
+    </div>
+    <figure class="speakhead__reel">
+      <a class="video video--top" href="https://vimeo.com/1213746439" data-vimeo="1213746439" aria-label="Play the video: Katherine Dudtschak's speaking reel">
+        <img src="assets/img/speaking-reel.webp" alt="" width="1280" height="720" fetchpriority="high">
+        <span class="video__play">Watch Katherine speak</span>
+      </a>
+      <figcaption>Her speaking reel. 2 minutes 20 seconds.</figcaption>
+    </figure>
+    <div class="speakhead__rest">
       <p class="lede">She served as CEO twice and spent four decades at the highest levels of global business. The talks she gives now are different from the ones she gave then.</p>
       <div class="actions">
         <a class="btn" href="#invite">Invite Katherine</a>
-        <a class="btn btn--line" href="#formats">See the formats</a>
+        <a class="btn btn--line" href="#talks">See the four talks</a>
       </div>
     </div>
-    <figure class="portrait portrait--sage">
-      <div class="arch"><img src="assets/img/katherine-speaking.webp" alt="Katherine Dudtschak speaking with a small group" width="1000" height="1174" style="object-position: 40% 20%"></div>
-    </figure>
   </div>
 </section>
 
 <section class="band band--plum" aria-label="What audiences say">
-  <div class="wrap">
-    <p class="kicker">When Katherine leaves the stage, people often say the same thing</p>
-    <blockquote class="bigquote">
-      <p>I felt seen. I felt understood. I felt hope.</p>
-    </blockquote>
+  <div class="wrap split split--top">
+    <div class="split__copy">
+      <p class="lede">She no longer speaks to inform or impress. She speaks to open something in the room.</p>
+      <p>To help people feel, for a moment, that the sincere life might actually be possible. That wholeness is within reach. That they are not alone in wanting something more human from their work and their world.</p>
+    </div>
+    <div>
+      <p class="kicker">When Katherine leaves the stage, people often say the same thing</p>
+      <blockquote class="felt">
+        <p><span>I felt seen.</span> <span>I felt understood.</span> <span>I felt hope.</span></p>
+      </blockquote>
+    </div>
   </div>
 </section>
 
-<section class="band" id="themes" aria-labelledby="themes-title">
+<section class="band" aria-labelledby="worlds-title">
   <div class="wrap">
     <div class="band__head band__head--split">
-      <h2 id="themes-title">Four talks</h2>
-      <p class="lede">Her talks draw on a life that has spanned worlds, and they unfold as conversations, stories and invitations. Audiences leave with both feeling and framework.</p>
+      <h2 id="worlds-title">A life that has spanned worlds</h2>
+      <p class="lede">Her work sits at the intersection of structure and humanity, where humility, performance, identity and leadership meet. She speaks from the full arc of that journey.</p>
     </div>
-    <div class="cards cards--2">
-      <article class="card card--mist">
-        <h3>The leadership we need now</h3>
-        <p>Four converging crises: social fracture, economic fragility, planetary breakdown, and the flood of information and disinformation that accelerates them all. What leadership looks like when we solve problems from kindness and curiosity instead of fear and control.</p>
-      </article>
-      <article class="card card--sage">
-        <h3>The bridge between worlds</h3>
-        <p>Katherine has led with structure and learned to lead with flow. She has achieved, and she has surrendered. What becomes possible when we stop choosing sides and start integrating: in ourselves, in our organizations, in our world.</p>
-      </article>
-      <article class="card card--rose">
-        <h3>From hiding to wholeness</h3>
-        <p>Carrying a secret for fifty years, building a life that looked right but felt wrong, and affirming her truth while leading at the highest levels of corporate life. Vulnerable, honest and hopeful. What are you still hiding?</p>
-      </article>
-      <article class="card card--blue">
-        <h3>Creating cultures of belonging</h3>
-        <p>What she learned transforming the culture of 25,000 employees. Psychological safety, inclusive leadership, and the proof that humanity and performance strengthen each other.</p>
-      </article>
+    <ul class="fromto">
+      <li><span>From the child of war-surviving immigrants on a rural Canadian farm</span> <span>to the highest levels of global finance.</span></li>
+      <li><span>From a pattern-seeing, systems-oriented mind</span> <span>to leading complex organizations at scale.</span></li>
+      <li><span>From carrying a gender truth in silence for fifty years</span> <span>to affirming it in front of eighty thousand colleagues.</span></li>
+      <li><span>From living in both a man’s world and a woman’s world</span> <span>to integrating the perspective of both.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--parchment" id="talks" aria-labelledby="talks-title">
+  <div class="wrap">
+    <div class="band__head band__head--split">
+      <h2 id="talks-title">Four talks</h2>
+      <p class="lede">Her talks unfold as conversations, as stories, as invitations. She speaks to hearts and to strategies, and audiences leave with both feeling and framework.</p>
+    </div>
+    <div class="talks">
+      <details class="talk" name="talk" open>
+        <summary><h3>The leadership we need now</h3></summary>
+        <div class="talk__body">
+          <p>We are living through what feels like four converging existential crises: social fracture, economic fragility, planetary breakdown, and the overwhelming proliferation of information and disinformation that accelerates them all. Katherine believes these outer crises mirror our inner imbalance.</p>
+          <p>She speaks about the extractive and performative systems we have built that reflect our fear and fragmentation, and the regenerative and coherent systems that become possible when we live from greater wholeness, humility, compassion and love. This talk explores what leadership looks like when we solve problems from kindness and curiosity rather than fear and control.</p>
+          <p><a class="link" href="#invite" data-pick="#s-talk" data-pick-value="The leadership we need now">Ask about this talk</a></p>
+        </div>
+      </details>
+      <details class="talk" name="talk">
+        <summary><h3>The bridge between worlds</h3></summary>
+        <div class="talk__body">
+          <p>Katherine has lived in both the masculine and feminine worlds. She has led with structure and learned to lead with flow. She has achieved and she has surrendered.</p>
+          <p>This talk explores what becomes possible when we stop choosing sides and start integrating: in ourselves, in our organizations, in our world.</p>
+          <p><a class="link" href="#invite" data-pick="#s-talk" data-pick-value="The bridge between worlds">Ask about this talk</a></p>
+        </div>
+      </details>
+      <details class="talk" name="talk">
+        <summary><h3>From hiding to wholeness</h3></summary>
+        <div class="talk__body">
+          <p>Katherine’s personal story of transformation: carrying a secret for fifty years, building a life that looked right but felt wrong, and finally affirming her truth while leading at the highest levels of corporate life. What began in crippling fear unfolded into love, embrace, acceptance, and the most humbling standing ovations.</p>
+          <p>This talk is vulnerable, honest, and ultimately hopeful. It asks audiences to consider: what are you still hiding? And what might become possible if you stopped?</p>
+          <p><a class="link" href="#invite" data-pick="#s-talk" data-pick-value="From hiding to wholeness">Ask about this talk</a></p>
+        </div>
+      </details>
+      <details class="talk" name="talk">
+        <summary><h3>Creating cultures of belonging</h3></summary>
+        <div class="talk__body">
+          <p>Drawing from her experience transforming the culture of 25,000 employees, Katherine shares what she learned about building organizations where people feel safe enough to be real.</p>
+          <p>The inclusive approach to leadership that enabled industry-leading results. Psychological safety, inclusive leadership, and the proof that humanity and performance strengthen each other.</p>
+          <p><a class="link" href="#invite" data-pick="#s-talk" data-pick-value="Creating cultures of belonging">Ask about this talk</a></p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="band band--parchment" id="formats" aria-labelledby="formats-title">
+<section class="band" id="formats" aria-labelledby="formats-title">
   <div class="wrap">
     <div class="band__head band__head--split">
       <h2 id="formats-title">Five ways to bring her in</h2>
@@ -101,38 +145,38 @@
       <li>
         <img src="assets/img/art-podium.webp" alt="" width="1100" height="733" loading="lazy">
         <div><h3>Keynote</h3><p class="formats__length">45 to 60 minutes</p></div>
-        <p>Story, framework and invitation woven together. Audiences leave moved and equipped.</p>
+        <p>Katherine’s signature format. Story, insight and invitation woven together. Audiences leave moved and equipped.</p>
       </li>
       <li>
         <img src="assets/img/art-fireside.webp" alt="" width="1100" height="733" loading="lazy">
         <div><h3>Fireside conversation</h3><p class="formats__length">30 to 45 minutes</p></div>
-        <p>An intimate dialogue, often with a host or interviewer. Suited to leadership gatherings and smaller audiences.</p>
+        <p>An intimate dialogue, often with a host or interviewer. Particularly suited to leadership gatherings and smaller audiences.</p>
       </li>
       <li>
         <img src="assets/img/art-teaching.webp" alt="" width="1100" height="733" loading="lazy">
         <div><h3>Academic lecture and seminar</h3><p class="formats__length">Guest lectures and executive education</p></div>
-        <p>Her models on integrated leadership and organizational transformation translate naturally to universities and business schools.</p>
+        <p>Her models on integrated leadership, organizational transformation and conscious capitalism translate naturally to academic settings: guest lectures, faculty dialogues and executive education programmes.</p>
       </li>
       <li>
         <img src="assets/img/art-classroom.webp" alt="" width="1100" height="733" loading="lazy">
         <div><h3>Workshop</h3><p class="formats__length">Half day or full day</p></div>
-        <p>Deeper immersion with small group work, reflection and practical application, for leadership teams or curated cohorts.</p>
+        <p>Deeper immersion into the Sincerely framework. Small group work, reflection exercises and practical application, designed for leadership teams or curated cohorts.</p>
       </li>
       <li>
         <img src="assets/img/art-dialogue.webp" alt="" width="1100" height="733" loading="lazy">
         <div><h3>The Sincerely Experience</h3><p class="formats__length">The Sincerely Show, live</p></div>
-        <p>Katherine interviews a remarkable human in front of your audience, then leads reflection with the room. Part conversation, part teaching, part collective witnessing.</p>
+        <p>A format Katherine has developed over 15 years. She interviews a remarkable human in front of a live audience, drawing out their transformation story, then facilitates reflection and integration with the room. Part conversation, part teaching, part collective witnessing.</p>
       </li>
     </ul>
   </div>
 </section>
 
-<section class="band" aria-labelledby="been-title">
-  <div class="wrap split">
+<section class="band band--mist" aria-labelledby="been-title">
+  <div class="wrap split split--top">
     <div class="split__copy">
       <h2 id="been-title">Where Katherine has been</h2>
       <p class="lede">Leadership conferences, corporate gatherings, industry summits, university lectures, business school seminars and intimate executive circles.</p>
-      <p>Her frameworks have the intellectual depth academic audiences respect, and the lived experience that makes theory feel real. She is selective about the stages she stands on, and looks for audiences hungry for something real.</p>
+      <p>Her frameworks have the intellectual depth that academic audiences respect, and the lived experience that makes theory feel real. Universities and business schools are natural homes for her work on leadership, transformation, organizational culture, and the integration of purpose and performance.</p>
     </div>
     <dl class="facts">
       <div><dt>2 times</dt><dd>a CEO, at RBC Caribbean and HomeEquity Bank</dd></div>
@@ -144,19 +188,22 @@
 </section>
 
 <section class="band band--sage" id="invite" aria-labelledby="invite-title">
-  <div class="wrap split">
+  <div class="wrap split split--top">
     <div class="split__copy">
       <h2 id="invite-title">Invite Katherine</h2>
       <p class="lede">Tell us about your gathering: who will be there, what you hope they take away, and anything that helps us see whether this is a good fit.</p>
+      <p>Katherine is selective about the stages she stands on. She looks for audiences hungry for something real, organizers who care about depth over spectacle, and gatherings where transformation is welcome.</p>
       <p>Press and podcast requests are welcome here too. Mention your outlet, your angle and your deadline.</p>
     </div>
     <form class="form card" data-preview="Thank you. This is a concept preview, so your request was not sent or saved.">
       <div><label for="s-name">Your name</label><input id="s-name" type="text" autocomplete="name" required></div>
       <div><label for="s-email">Email address</label><input id="s-email" type="email" autocomplete="email" required></div>
       <div><label for="s-org">Organization or outlet</label><input id="s-org" type="text" autocomplete="organization"></div>
+      <div><label for="s-audience">Audience size</label><input id="s-audience" type="text"></div>
+      <div class="full"><label for="s-event">Event name and date</label><input id="s-event" type="text"></div>
       <div>
         <label for="s-format">Format</label>
-        <select id="s-format">
+        <select id="s-format" data-from-address="about">
           <option>Keynote</option>
           <option>Fireside conversation</option>
           <option>Academic lecture or seminar</option>
@@ -165,8 +212,16 @@
           <option>Press or podcast interview</option>
         </select>
       </div>
-      <div><label for="s-event">Event name and date</label><input id="s-event" type="text"></div>
-      <div><label for="s-audience">Audience size</label><input id="s-audience" type="text"></div>
+      <div>
+        <label for="s-talk">Talk</label>
+        <select id="s-talk">
+          <option>Not sure yet</option>
+          <option>The leadership we need now</option>
+          <option>The bridge between worlds</option>
+          <option>From hiding to wholeness</option>
+          <option>Creating cultures of belonging</option>
+        </select>
+      </div>
       <div class="full"><label for="s-message">About your gathering</label><textarea id="s-message" required></textarea></div>
       <div class="full"><button class="btn" type="submit">Send the invitation</button></div>
       <p class="form-note full" role="status"></p>
