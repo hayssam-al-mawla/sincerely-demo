@@ -210,6 +210,223 @@
     });
   });
 
+  // ---------- The memoir: the book turns a little toward the pointer ----------
+
+  var tome = document.querySelector('[data-tome]');
+  var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (tome && !reduceMotion && finePointer) {
+    var tomeStage = tome.closest('section');
+    var between = function (value, low, high) { return Math.max(low, Math.min(high, value)); };
+    tomeStage.addEventListener('pointermove', function (event) {
+      var box = tome.getBoundingClientRect();
+      var x = (event.clientX - (box.left + box.width / 2)) / window.innerWidth;
+      var y = (event.clientY - (box.top + box.height / 2)) / window.innerHeight;
+      // It never turns far enough to hide its pages or show its back.
+      tome.style.setProperty('--ry', between(-27 + x * 38, -44, -8).toFixed(1) + 'deg');
+      tome.style.setProperty('--rx', between(-5 - y * 16, -12, 1).toFixed(1) + 'deg');
+      tome.style.setProperty('--shine', between(62 - x * 130, 0, 100).toFixed(0) + '%');
+    });
+    tomeStage.addEventListener('pointerleave', function () {
+      tome.style.removeProperty('--ry');
+      tome.style.removeProperty('--rx');
+      tome.style.removeProperty('--shine');
+    });
+  }
+
+  // ---------- The memoir: a sample of the audiobook ----------
+
+  document.querySelectorAll('[data-sample]').forEach(function (sample) {
+    var audio = sample.querySelector('audio');
+    var ui = sample.querySelector('.sample__ui');
+    var button = sample.querySelector('.sample__play');
+    var seek = sample.querySelector('.sample__seek');
+    var now = sample.querySelector('[data-sample-now]');
+    var total = sample.querySelector('[data-sample-total]');
+    var fail = sample.querySelector('.sample__fail');
+    if (!audio || !ui || !button || !seek) return;
+
+    function clock(seconds) {
+      seconds = Math.max(0, Math.floor(seconds));
+      return Math.floor(seconds / 60) + ':' + ('0' + (seconds % 60)).slice(-2);
+    }
+    function paint() {
+      var length = isFinite(audio.duration) && audio.duration ? audio.duration : Number(seek.max);
+      seek.max = Math.round(length);
+      seek.value = audio.currentTime;
+      seek.style.setProperty('--played', (audio.currentTime / length * 100).toFixed(2) + '%');
+      seek.setAttribute('aria-valuetext', clock(audio.currentTime) + ' of ' + clock(length));
+      if (now) now.textContent = clock(audio.currentTime);
+      if (total) total.textContent = clock(length);
+    }
+    function state() {
+      var playing = !audio.paused && !audio.ended;
+      sample.classList.toggle('is-playing', playing);
+      button.setAttribute('aria-label', playing ? 'Pause the sample' : 'Play the sample');
+    }
+
+    // The browser's own player is the fallback; with scripts on, ours takes its place.
+    audio.removeAttribute('controls');
+    ui.hidden = false;
+    button.addEventListener('click', function () {
+      if (audio.paused) {
+        var started = audio.play();
+        if (started && started.catch) started.catch(function () {});
+      } else {
+        audio.pause();
+      }
+    });
+    seek.addEventListener('input', function () {
+      audio.currentTime = Number(seek.value);
+      paint();
+    });
+    ['play', 'pause', 'ended'].forEach(function (name) { audio.addEventListener(name, state); });
+    ['timeupdate', 'loadedmetadata', 'ended'].forEach(function (name) { audio.addEventListener(name, paint); });
+    audio.addEventListener('error', function () {
+      ui.hidden = true;
+      if (fail) fail.hidden = false;
+    });
+    // On a phone's lock screen the sample shows the audiobook's cover and Katherine's name.
+    if ('mediaSession' in navigator && window.MediaMetadata) {
+      audio.addEventListener('play', function () {
+        navigator.mediaSession.metadata = new window.MediaMetadata({
+          title: 'Sincerely, Katherine. A sample of the audiobook',
+          artist: 'Katherine Dudtschak',
+          artwork: [{ src: new URL('assets/img/book-audio.webp', document.baseURI).href, sizes: '668x668', type: 'image/webp' }]
+        });
+      });
+    }
+    // Starting a video quiets the sample, so the two never talk over each other.
+    document.querySelectorAll('a.video[data-video]').forEach(function (link) {
+      link.addEventListener('click', function () { audio.pause(); });
+    });
+    paint();
+  });
+
+  // ---------- The memoir: on a small screen the publisher's description folds, and the praise scrolls sideways ----------
+
+  document.querySelectorAll('[data-more]').forEach(function (block) {
+    var button = block.querySelector('[data-more-button]');
+    var rest = block.querySelector('[data-more-rest]');
+    if (!button || !rest) return;
+    // The stylesheet only folds it below tablet width; wider screens show everything.
+    block.classList.add('is-folded');
+    button.hidden = false;
+    button.addEventListener('click', function () {
+      block.classList.remove('is-folded');
+      button.hidden = true;
+      rest.setAttribute('tabindex', '-1');
+      rest.focus({ preventScroll: true });
+    });
+  });
+
+  var praiseRows = document.querySelectorAll('.praise-columns');
+  function reachRows() {
+    // A row that scrolls sideways has to be reachable from the keyboard; when it is a plain column it is not a stop.
+    praiseRows.forEach(function (row) {
+      if (row.scrollWidth > row.clientWidth + 4) {
+        row.tabIndex = 0;
+        row.setAttribute('role', 'group');
+        row.setAttribute('aria-label', 'More words from readers, in a row that scrolls sideways');
+      } else {
+        row.removeAttribute('tabindex');
+        row.removeAttribute('role');
+        row.removeAttribute('aria-label');
+      }
+    });
+  }
+  if (praiseRows.length) {
+    reachRows();
+    window.addEventListener('resize', reachRows);
+  }
+
+  // ---------- The memoir: choosing an edition ----------
+
+  document.querySelectorAll('[data-editions]').forEach(function (picker) {
+    var tablist = picker.querySelector('[role="tablist"]');
+    var tabs = Array.prototype.slice.call(picker.querySelectorAll('[role="tab"]'));
+    var panels = Array.prototype.slice.call(picker.querySelectorAll('[data-edition]'));
+    var pictures = picker.querySelectorAll('[data-edition-image]');
+    if (!tablist || !tabs.length) return;
+
+    function choose(tab, focus) {
+      var id = tab.getAttribute('aria-controls');
+      tabs.forEach(function (other) {
+        var on = other === tab;
+        other.setAttribute('aria-selected', on ? 'true' : 'false');
+        other.tabIndex = on ? 0 : -1;
+        other.classList.toggle('is-on', on);
+      });
+      panels.forEach(function (panel) { panel.hidden = panel.id !== id; });
+      pictures.forEach(function (picture) {
+        picture.classList.toggle('is-on', 'edition-' + picture.getAttribute('data-edition-image') === id);
+      });
+      if (focus) tab.focus();
+    }
+    function fromAddress() {
+      var wanted = window.location.hash.slice(1);
+      var tab = tabs.filter(function (t) { return t.getAttribute('aria-controls') === wanted; })[0];
+      if (tab) choose(tab, false);
+      return !!tab;
+    }
+
+    panels.forEach(function (panel) {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', 'tab-' + panel.getAttribute('data-edition'));
+    });
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () { choose(tab, false); });
+      tab.addEventListener('keydown', function (event) {
+        var next = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = tabs[(index + 1) % tabs.length];
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = tabs[(index - 1 + tabs.length) % tabs.length];
+        if (event.key === 'Home') next = tabs[0];
+        if (event.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { event.preventDefault(); choose(next, true); }
+      });
+    });
+    picker.classList.add('is-picker');
+    tablist.hidden = false;
+    // An edition can be linked to directly, e.g. book.html#edition-signed
+    if (!fromAddress()) choose(tabs[0], false);
+    window.addEventListener('hashchange', fromAddress);
+  });
+
+  // ---------- The memoir: a name on the title page of a signed copy ----------
+
+  document.querySelectorAll('[data-inscribe]').forEach(function (form) {
+    var input = form.querySelector('[data-inscribe-name]');
+    var out = form.querySelector('[data-inscribe-out]');
+    if (!input || !out) return;
+    var unwritten = out.textContent;
+    function write() {
+      var name = input.value.replace(/\s+/g, ' ').trim();
+      out.textContent = name ? 'For ' + name + ',' : unwritten;
+    }
+    input.addEventListener('input', write);
+    // The preview form clears itself after a pretend send; the page goes back to "For you,".
+    form.addEventListener('reset', function () { setTimeout(write, 0); });
+  });
+
+  // ---------- The memoir: the shelf names whichever spine is under the pointer ----------
+
+  document.querySelectorAll('[data-shelf]').forEach(function (shelf) {
+    var caption = shelf.querySelector('[data-shelf-caption]');
+    if (!caption) return;
+    var resting = caption.textContent;
+    function name(spine) {
+      caption.textContent = spine ? spine.getAttribute('data-caption') : resting;
+      caption.classList.toggle('is-title', !!spine);
+    }
+    shelf.querySelectorAll('[data-caption]').forEach(function (spine) {
+      spine.addEventListener('pointerenter', function (event) {
+        if (event.pointerType === 'mouse') name(spine);
+      });
+      spine.addEventListener('pointerleave', function () { name(null); });
+      spine.addEventListener('focus', function () { name(spine); });
+      spine.addEventListener('blur', function () { name(null); });
+    });
+  });
+
   // ---------- Forms are for show in this preview: nothing leaves the browser ----------
 
   document.querySelectorAll('form[data-preview]').forEach(function (form) {

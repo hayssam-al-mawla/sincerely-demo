@@ -10,9 +10,11 @@
 <meta property="og:site_name" content="Sincerely">
 <meta property="og:title" content="Sincerely, Katherine. | The memoir by Katherine Dudtschak">
 <meta property="og:description" content="Life, gender, inclusivity and leadership for the future. The memoir that began Sincerely.">
-<meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og.jpg">
+<meta property="og:image" content="https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/og-book.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2A2140">
+<link rel="preload" as="image" href="assets/img/book-cover.webp" fetchpriority="high">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Sincerely, Katherine.", "alternativeHeadline": "Life, Gender, Inclusivity, and Leadership for the Future", "author": {"@type": "Person", "name": "Katherine Dudtschak", "url": "https://hayssam-al-mawla.github.io/sincerely-demo/katherine.html"}, "publisher": {"@type": "Organization", "name": "Page Two Books"}, "datePublished": "2026-03-31", "inLanguage": "en", "genre": "Autobiography", "image": "https://hayssam-al-mawla.github.io/sincerely-demo/assets/img/book-cover.webp", "url": "https://hayssam-al-mawla.github.io/sincerely-demo/book.html", "workExample": [{"@type": "Book", "bookFormat": "https://schema.org/Paperback", "isbn": "9781774586921", "numberOfPages": 248}, {"@type": "Book", "bookFormat": "https://schema.org/EBook"}, {"@type": "Audiobook", "bookFormat": "https://schema.org/AudiobookFormat", "isbn": "9781774587454", "readBy": {"@type": "Person", "name": "Katherine Dudtschak", "url": "https://hayssam-al-mawla.github.io/sincerely-demo/katherine.html"}, "duration": "PT6H13M"}]}</script>
 <link rel="icon" type="image/png" href="assets/img/mark-rose.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,160 +35,481 @@
       <a class="nav__link" href="foundation.html">Foundation</a>
       <a class="nav__link" href="katherine.html">Katherine</a>
       <a class="nav__search" href="library.html" aria-label="Search the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search the library</span></a>
-      <a class="btn" href="work.html#conversation">Begin a conversation</a>
+      <a class="btn" href="#order">Order the memoir</a>
     </nav>
   </div>
 </header>
 <main id="main">
-<section class="pagehead band--rose">
-  <div class="wrap pagehead__grid">
-    <div>
-      <p class="kicker">The memoir by Katherine Dudtschak</p>
-      <h1>Sincerely, Katherine.</h1>
-      <p class="lede">Life, gender, inclusivity and leadership for the future. The book that began it all, and a love letter to humanity.</p>
-      <div class="actions">
-        <a class="btn" href="#order">Order a copy</a>
-        <a class="btn btn--line" href="#readers">What readers say</a>
+<section class="bookhero" aria-labelledby="book-title">
+  <div class="wrap bookhero__grid">
+    <p class="kicker bookhero__by">The memoir by Katherine Dudtschak</p>
+    <h1 class="bookhero__title" id="book-title"><span>Sincerely,</span> <span class="bookhero__turn">Katherine.</span></h1>
+    <div class="bookhero__stage">
+      <div class="tome" data-tome>
+        <div class="tome__book">
+          <img class="tome__front" src="assets/img/book-cover.webp" alt="The cover of Sincerely, Katherine. Katherine Dudtschak in a white blazer, smiling, her head resting on her hand." width="900" height="1391" fetchpriority="high">
+          <span class="tome__sheen" aria-hidden="true"></span>
+          <span class="tome__edge tome__edge--fore" aria-hidden="true"></span>
+          <span class="tome__edge tome__edge--top" aria-hidden="true"></span>
+          <span class="tome__edge tome__edge--spine" aria-hidden="true"></span>
+          <span class="tome__back" aria-hidden="true"></span>
+        </div>
+        <span class="tome__shadow" aria-hidden="true"></span>
       </div>
     </div>
-    <img class="book__cover" src="assets/img/book-hardcover.webp" alt="The hardcover of Sincerely, Katherine. resting on a knitted blanket beside dried lavender" width="668" height="684">
+    <div class="bookhero__about">
+      <p class="bookhero__sub">Life, gender, inclusivity and leadership for the future.</p>
+      <p>The book that began it all. A love letter to humanity.</p>
+    </div>
+    <div class="bookhero__act">
+      <blockquote class="bookhero__blurb">
+        <p>&ldquo;Katherine Dudtschak is a shining example of courage and authenticity as she redefined the notion of true leadership along the way in both her personal and professional life.&rdquo;</p>
+        <cite>Sophie Gr&eacute;goire Trudeau</cite>
+      </blockquote>
+      <div class="actions">
+        <a class="btn" href="#order">Order a copy</a>
+        <a class="btn btn--line" href="#listen">Hear Katherine read</a>
+      </div>
+      <p class="bookhero__out">Out now in paperback, ebook and audiobook, and as a signed hardcover.</p>
+    </div>
   </div>
 </section>
 
-<section class="band" aria-labelledby="about-title">
-  <div class="wrap split">
-    <div class="split__copy">
-      <h2 id="about-title">There is a book in the corner of this home.</h2>
+<section class="premise" aria-label="The premise of the book">
+  <div class="wrap premise__grid">
+    <p class="premise__before">Imagine holding a secret so big that sharing it could mean destroying the life you built and hurting those you love.</p>
+    <p class="premise__after">Imagine sharing and embracing a secret so powerful that it could transform your life, your relationships, and how you see and lead in the world.</p>
+  </div>
+</section>
+
+<section class="band" id="story" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="bookstory">
+      <div>
+        <h2 id="about-title">There is a book in the corner of this home.</h2>
+        <img class="bookstory__art" src="assets/img/art-openbook.webp" alt="" width="659" height="418" loading="lazy">
+      </div>
+      <div>
+        <p class="lede">It is one woman’s honest account of finding her way home to herself while leading at the highest levels of corporate life. A story of truth and integrity with relevance to leadership, identity, inclusion, and systems. Offered in case it might help you find your own way home.</p>
+        <p>It is a story of secrets kept and finally told. Of a life built on achievement and nearly lost to silence. Of transformation that began with terror and ended with standing ovations. Of grief that cracked everything open and wholeness that emerged from the breaking.</p>
+        <p class="bookstory__mirror">It is Katherine’s story. And it is, perhaps, a mirror for your own.</p>
+      </div>
     </div>
-    <div class="split__copy">
-      <p class="lede">It is one woman’s honest account of finding her way home to herself while leading at the highest levels of corporate life.</p>
-      <p>It is a story of secrets kept and finally told. Of a life built on achievement and nearly lost to silence. Of transformation that began with terror and ended with standing ovations. Of grief that cracked everything open, and the wholeness that emerged from the breaking.</p>
-      <p>It is Katherine’s story. And it is, perhaps, a mirror for your own.</p>
+    <blockquote class="bookstory__pull">
+      <p><span>&ldquo;I was terrified of being judged and rejected.</span> <span>I thought I might lose my job.&rdquo;</span></p>
+      <cite>From the pages</cite>
+    </blockquote>
+    <div class="jacket" data-more>
+      <h3>From the publisher</h3>
+      <div class="jacket__text">
+        <p>As one of Canada’s most senior and recognized corporate executives, Katherine Dudtschak had a masculine name and appearance that did not reflect her truth. She had built a life of material success, yet something essential was missing.</p>
+        <p>Katherine was born to immigrant parents who came to Canada after surviving World War II camps. Her early years were marked with post-war trauma, financial stress, and learning difficulties.</p>
+        <div class="jacket__rest" data-more-rest>
+          <p>Fueled by a passion for a better life, she became a loving parent to four children and a top executive at Canada’s largest bank. But everything changed in a moment while visiting her daughter’s university dorm. A gender inclusivity poster spoke to a truth she’d buried deep inside. She saw Katherine: the woman and the essence of who she had always been.</p>
+          <p>At 50, she affirmed her gender, coming out as Katherine to the corporate world in front of 80,000 colleagues. Her courage proved that authenticity and leadership are not only compatible but essential. Katherine ignited change, inspiring a more inclusive and compassionate approach to leadership. She amplified voices from all walks of life, especially those who knew hardship, adversity, and the feelings of not belonging. She created space for human uniqueness to be seen and valued as a vital ingredient in building the kind, inclusive, and sustainable world we long for.</p>
+          <p><em>Sincerely, Katherine.</em> is a story of resilience, self-love, and the profound impact of leading with authenticity, inclusivity, and purpose. She inspires each of us to foster a harmony within ourselves, and with each other and the natural world we are part of and share.</p>
+        </div>
+      </div>
+      <button class="btn btn--line jacket__more" type="button" data-more-button hidden>Keep reading</button>
     </div>
   </div>
 </section>
 
 <section class="band band--parchment" aria-labelledby="parts-title">
   <div class="wrap">
-    <h2 id="parts-title" style="margin-bottom: clamp(1.8rem, 4vw, 3rem)">A story in three parts</h2>
-    <ol class="parts">
-      <li class="part">
-        <p class="kicker">Part one</p>
+    <h2 id="parts-title">A story in three parts</h2>
+    <ol class="contents">
+      <li>
+        <p class="contents__no">Part one</p>
         <h3>The journey</h3>
-        <p>A child on a farm, carrying a secret she couldn’t name. A determined climber, building a life that looked right but felt wrong. A woman who, after fifty years, chose truth over safety.</p>
+        <div>
+          <p>A child on a farm, carrying a secret she couldn’t name. A determined climber, building a life that looked right but felt wrong. A woman who finally, after fifty years, chose truth over safety.</p>
+          <p class="contents__line">This is the story of becoming Katherine.</p>
+        </div>
       </li>
-      <li class="part">
-        <p class="kicker">Part two</p>
+      <li>
+        <p class="contents__no">Part two</p>
         <h3>The perspective</h3>
-        <p>What decades in leadership taught her. How organizations can become places of belonging. Why the world’s outer crises mirror our inner imbalance, and what it means to lead from wholeness instead of fear.</p>
+        <div>
+          <p>What decades in leadership taught her. How organizations can become places of belonging. Why the world’s outer crises mirror our inner imbalance. And what it means to lead from wholeness rather than fear.</p>
+          <p class="contents__line">This is the wisdom she gathered along the way.</p>
+        </div>
       </li>
-      <li class="part">
-        <p class="kicker">Part three</p>
+      <li>
+        <p class="contents__no">Part three</p>
         <h3>The beginning</h3>
-        <p>Not an ending but an opening. The life that becomes possible when we stop performing and start being, and an invitation to your own becoming.</p>
+        <div>
+          <p>Not an ending, but an opening. The life that becomes possible when we stop performing and start being. The invitation to your own becoming.</p>
+          <p class="contents__line">This is the door she holds open for you.</p>
+        </div>
       </li>
     </ol>
   </div>
 </section>
 
-<section class="band band--plum" aria-label="From the pages">
-  <div class="wrap">
-    <p class="kicker">From the pages</p>
-    <blockquote class="bigquote">
-      <p>It is quite simple: nothing that is meant for you will ever get away. Love deeply, and without the need to possess or own. And I promise, I promise: the right things will stay.</p>
-    </blockquote>
+<section class="band band--night" id="listen" aria-labelledby="listen-title">
+  <div class="wrap listen">
+    <div>
+      <p class="listen__premise">Facing our greatest fears is the pathway to the kind, inclusive, and sustainable world we all long for.</p>
+      <h2 id="listen-title" class="h3">Hear Katherine read from the book</h2>
+      <div class="sample" data-sample>
+        <audio controls preload="none" src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3a/d5/c1/3ad5c11e-53e7-5945-853b-9e4374eac6dc/mzaf_9390202529690018611.std.aac.p.m4a">
+          <a href="https://books.apple.com/audiobook/sincerely-katherine/id1859668387">Listen to the sample on Apple Books</a>
+        </audio>
+        <div class="sample__ui" hidden>
+          <button class="sample__play" type="button" aria-label="Play the sample">
+            <svg class="sample__icon sample__icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8A.8.8 0 0 0 8 5.2Z"/></svg>
+            <svg class="sample__icon sample__icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.4" height="14" rx="1"/><rect x="13.6" y="5" width="4.4" height="14" rx="1"/></svg>
+          </button>
+          <div>
+            <p class="sample__title">A sample of the audiobook</p>
+            <input class="sample__seek" type="range" min="0" max="300" step="1" value="0" aria-label="Position in the sample">
+            <p class="sample__time"><span data-sample-now>0:00</span><span data-sample-total>5:00</span></p>
+          </div>
+        </div>
+        <p class="sample__fail" hidden>The sample did not load here. <a href="https://books.apple.com/audiobook/sincerely-katherine/id1859668387">Listen on Apple Books</a>.</p>
+      </div>
+      <p class="listen__note">Five minutes, read by the author. The full recording is unabridged and runs 6 hours 13 minutes.</p>
+      <ul class="platforms" aria-label="Where to get the audiobook">
+        <li><a href="https://books.apple.com/audiobook/sincerely-katherine/id1859668387">Apple Books</a></li>
+        <li><a href="https://libro.fm/audiobooks/9781774587454-sincerely-katherine">Libro.fm</a></li>
+        <li><a href="https://www.audible.com/search?keywords=Sincerely%2C+Katherine+Dudtschak">Audible</a></li>
+        <li><a href="https://www.barnesandnoble.com/w/sincerely-katherine-katherine-dudtschak/1147243660">Barnes &amp; Noble</a></li>
+      </ul>
+    </div>
+    <img class="listen__cover" src="assets/img/book-audio.webp" alt="The audiobook cover of Sincerely, Katherine." width="668" height="668" loading="lazy">
   </div>
 </section>
 
-<section class="band" id="order" aria-labelledby="order-title">
+<section class="band" id="readers" aria-labelledby="readers-title">
+  <div class="wrap">
+    <h2 id="readers-title">Words from readers</h2>
+    <figure class="praise praise--lead">
+      <blockquote>
+        <p>One of the most sacred experiences a human being can navigate during their lifetime is a deep communion with their true self. This is far from an easy task. Katherine Dudtschak is a shining example of courage and authenticity as she redefined the notion of true leadership along the way in both her personal and professional life. Her story might not be yours, but don’t be fooled, its lessons are universally ours.</p>
+      </blockquote>
+      <figcaption>
+        <strong>Sophie Gr&eacute;goire Trudeau</strong>
+        <span>Global speaker and bestselling author of <em>Closer Together</em></span>
+        <a class="praise__more" href="show-sophie-gregoire.html"><img src="assets/img/episodes/thumbs/sophie-gregoire.webp" alt="" width="300" height="300" loading="lazy"><span>Hear Sophie in conversation with Katherine</span></a>
+      </figcaption>
+    </figure>
+    <div class="praise-columns">
+      <figure class="praise">
+        <blockquote>
+          <p><em>Sincerely, Katherine.</em> reminds us that when one person finds their voice and speaks their truth, it creates space for all of us to grow, to listen, and to evolve together. This book is a tender and transformative contribution to a more compassionate world.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Dr. Robyne Hanley-Dafoe</strong>
+          <span>Award-winning author of <em>Calm Within the Storm</em> and <em>Stress Wisely</em></span>
+          <a class="praise__more" href="show-robyne-hanley-dafoe.html"><img src="assets/img/episodes/thumbs/robyne-hanley-dafoe.webp" alt="" width="300" height="300" loading="lazy"><span>Hear Robyne in conversation with Katherine</span></a>
+        </figcaption>
+      </figure>
+      <figure class="praise">
+        <blockquote>
+          <p>She shares her life experiences so that others can gain a deeper understanding that while there may be differences among us, together we can move toward a brighter future based on kindness, inclusivity, and positive change.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Phil Fontaine</strong>
+          <span>Indigenous Canadian leader and former National Chief of the Assembly of First Nations</span>
+        </figcaption>
+      </figure>
+      <figure class="praise">
+        <blockquote>
+          <p>Katherine’s story is a triumph of courage, authenticity and love. Her life is a testament to living boldly and embracing every part of who you are.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Colleen Johnston</strong>
+          <span>Philanthropist, former CFO of TD Bank</span>
+        </figcaption>
+      </figure>
+      <figure class="praise">
+        <blockquote>
+          <p>I highly recommend <em>Sincerely, Katherine.</em> for not only Katherine’s generous sharing of her experience, but also her reflections on how inclusive leadership can have a fundamental impact on individuals, organizations, and society.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Anthony Ostler</strong>
+          <span>President and CEO, Canadian Bankers Association, proud parent of two gender affirmed children</span>
+        </figcaption>
+      </figure>
+      <figure class="praise">
+        <blockquote>
+          <p>Katherine powerfully and elegantly cuts through delusions and gently uses her genius to engage us into a new state of thought. Prepare yourself for a delicately written journey which will transform your soul into a timeless union of understanding sovereign boundaries and conscious interconnectedness.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Patricia K Gagic</strong>
+          <span>International artist, author, and founder of the Karmic Art Academy</span>
+          <a class="praise__more" href="show-patricia-gagic.html"><img src="assets/img/episodes/thumbs/patricia-gagic.webp" alt="" width="300" height="300" loading="lazy"><span>Hear Patricia in conversation with Katherine</span></a>
+        </figcaption>
+      </figure>
+      <figure class="praise">
+        <blockquote>
+          <p>The prose is direct, empathetic, and unflinching.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Foreword Clarion Reviews</strong>
+          <a class="praise__more" href="https://www.forewordreviews.com/reviews/sincerely-katherine/"><span>Read the review</span></a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band band--rose" id="order" aria-labelledby="order-title">
   <div class="wrap">
     <div class="band__head band__head--split">
       <h2 id="order-title">Order your copy</h2>
-      <p class="lede">Four editions, including a signed hardcover. A portion of the proceeds from signed copies supports the Sincerely Foundation.</p>
+      <p class="lede"><em>Sincerely, Katherine.</em> is available now, in five editions. A portion of the proceeds from signed copies supports the <a href="foundation.html">Sincerely Foundation</a>.</p>
     </div>
-    <div class="editions">
-      <article class="edition">
-        <img src="assets/img/book-hardcover.webp" alt="Hardcover edition" width="668" height="684" loading="lazy">
-        <h3>Signed hardcover</h3>
-        <p>A limited edition, signed and inscribed by Katherine.</p>
-      </article>
-      <article class="edition">
-        <img src="assets/img/book-paperback.webp" alt="Paperback edition" width="668" height="685" loading="lazy">
-        <h3>Paperback</h3>
-        <p>The full memoir, easy to carry and to pass on.</p>
-      </article>
-      <article class="edition">
-        <img src="assets/img/book-ebook.webp" alt="Ebook edition on a tablet" width="668" height="685" loading="lazy">
-        <h3>Ebook</h3>
-        <p>For reading tonight, wherever you are.</p>
-      </article>
-      <article class="edition">
-        <img src="assets/img/book-gift.webp" alt="Gift box with the hardcover, lavender and a jar of honey" width="668" height="685" loading="lazy">
-        <h3>Gift box</h3>
-        <p>The signed hardcover with lavender honey from Maison Millefleurs.</p>
-      </article>
+    <div class="order" data-editions>
+      <div class="order__stage" aria-hidden="true">
+        <img src="assets/img/book-paperback.webp" alt="" width="668" height="685" loading="lazy" data-edition-image="paperback">
+        <img src="assets/img/book-ebook.webp" alt="" width="668" height="685" loading="lazy" data-edition-image="ebook">
+        <img src="assets/img/book-audio.webp" alt="" width="668" height="668" loading="lazy" data-edition-image="audiobook">
+        <img src="assets/img/book-hardcover.webp" alt="" width="668" height="684" loading="lazy" data-edition-image="signed">
+        <img src="assets/img/book-gift.webp" alt="" width="668" height="685" loading="lazy" data-edition-image="gift">
+      </div>
+      <div class="order__pick">
+        <div class="order__tabs" role="tablist" aria-label="Editions" hidden>
+          <button class="chip" type="button" role="tab" id="tab-paperback" aria-controls="edition-paperback">Paperback</button>
+          <button class="chip" type="button" role="tab" id="tab-ebook" aria-controls="edition-ebook">Ebook</button>
+          <button class="chip" type="button" role="tab" id="tab-audiobook" aria-controls="edition-audiobook">Audiobook</button>
+          <button class="chip" type="button" role="tab" id="tab-signed" aria-controls="edition-signed">Signed hardcover</button>
+          <button class="chip" type="button" role="tab" id="tab-gift" aria-controls="edition-gift">Gift box</button>
+        </div>
+
+        <div class="order__panel" id="edition-paperback" data-edition="paperback">
+          <h3>Paperback</h3>
+          <p>The full memoir, easy to carry and to pass on. 248 pages.</p>
+          <div class="sellers">
+            <div>
+              <h4>In Canada</h4>
+              <ul>
+                <li><a href="https://www.indigo.ca/products/sincerely-katherine">Indigo</a></li>
+                <li><a href="https://www.amazon.ca/Sincerely-Katherine-Gender-Inclusivity-Leadership/dp/1774586924/">Amazon.ca</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>In the United States</h4>
+              <ul>
+                <li><a href="https://www.amazon.com/Sincerely-Katherine-Gender-Inclusivity-Leadership/dp/1774586924/">Amazon</a></li>
+                <li><a href="https://www.barnesandnoble.com/w/sincerely-katherine-katherine-dudtschak/1147243660">Barnes &amp; Noble</a></li>
+                <li><a href="https://bookshop.org/p/books/sincerely-katherine-life-gender-inclusivity-and-leadership-for-the-future-katherine-dudtschak/a5ffb2f61d99d850">Bookshop.org</a></li>
+                <li><a href="https://www.booksamillion.com/p/Sincerely-Katherine/Katherine-Dudtschak/9781774586921">Books-A-Million</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>For a team or a book club</h4>
+              <ul>
+                <li><a href="https://www.porchlightbooks.com/products/sincerely-katherine-katherine-dudtschak-9781774586921">Porchlight</a>, with bulk pricing</li>
+              </ul>
+            </div>
+          </div>
+          <p class="order__fine">List price $26.95 in Canada and $19.95 in the United States.</p>
+        </div>
+
+        <div class="order__panel" id="edition-ebook" data-edition="ebook">
+          <h3>Ebook</h3>
+          <p>For reading tonight, wherever you are.</p>
+          <div class="sellers">
+            <div>
+              <h4>For Kobo</h4>
+              <ul>
+                <li><a href="https://www.indigo.ca/products/sincerely-katherine">Indigo</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>For NOOK</h4>
+              <ul>
+                <li><a href="https://www.barnesandnoble.com/w/sincerely-katherine-katherine-dudtschak/1147243660">Barnes &amp; Noble</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="order__panel" id="edition-audiobook" data-edition="audiobook">
+          <h3>Audiobook</h3>
+          <p>Unabridged, and read by Katherine herself. 6 hours 13 minutes.</p>
+          <div class="sellers">
+            <div>
+              <h4>Listen with</h4>
+              <ul>
+                <li><a href="https://books.apple.com/audiobook/sincerely-katherine/id1859668387">Apple Books</a></li>
+                <li><a href="https://libro.fm/audiobooks/9781774587454-sincerely-katherine">Libro.fm</a></li>
+                <li><a href="https://www.audible.com/search?keywords=Sincerely%2C+Katherine+Dudtschak">Audible</a></li>
+                <li><a href="https://www.barnesandnoble.com/w/sincerely-katherine-katherine-dudtschak/1147243660">Barnes &amp; Noble</a></li>
+              </ul>
+            </div>
+          </div>
+          <p class="order__fine"><a class="link" href="#listen">Hear a five-minute sample</a></p>
+        </div>
+
+        <div class="order__panel" id="edition-signed" data-edition="signed">
+          <h3>Signed hardcover</h3>
+          <p>A limited edition hardcover, signed and inscribed by Katherine. A portion of proceeds supports the Sincerely Foundation.</p>
+          <form class="inscribe" data-preview="Thank you. This is a concept preview, so your request was not sent or saved." data-inscribe>
+            <div class="inscribe__fields">
+              <div><label for="signed-name">Who should Katherine sign it for?</label><input id="signed-name" type="text" autocomplete="off" maxlength="28" placeholder="A first name" data-inscribe-name></div>
+              <div><label for="signed-email">Your email address</label><input id="signed-email" type="email" autocomplete="email" required></div>
+              <button class="btn" type="submit">Ask for a signed copy</button>
+              <p class="form-note" role="status"></p>
+            </div>
+            <figure class="inscribe__page">
+              <div class="titlepage" aria-hidden="true">
+                <span class="titlepage__for" data-inscribe-out>For you,</span>
+                <span class="titlepage__title">Sincerely,<br>Katherine.</span>
+                <span class="titlepage__sub">Life, Gender, Inclusivity, and Leadership for the Future</span>
+              </div>
+              <figcaption>A preview of the title page. Katherine writes the real one by hand.</figcaption>
+            </figure>
+          </form>
+        </div>
+
+        <div class="order__panel" id="edition-gift" data-edition="gift">
+          <h3>Gift box</h3>
+          <p>The signed hardcover paired with lavender honey from Maison Millefleurs. A meaningful gift for someone finding their way.</p>
+          <form class="inscribe" data-preview="Thank you. This is a concept preview, so your request was not sent or saved." data-inscribe>
+            <div class="inscribe__fields">
+              <div><label for="gift-name">Who is the gift for?</label><input id="gift-name" type="text" autocomplete="off" maxlength="28" placeholder="A first name" data-inscribe-name></div>
+              <div><label for="gift-email">Your email address</label><input id="gift-email" type="email" autocomplete="email" required></div>
+              <button class="btn" type="submit">Ask for a gift box</button>
+              <p class="form-note" role="status"></p>
+            </div>
+            <figure class="inscribe__page">
+              <div class="titlepage" aria-hidden="true">
+                <span class="titlepage__for" data-inscribe-out>For you,</span>
+                <span class="titlepage__title">Sincerely,<br>Katherine.</span>
+                <span class="titlepage__sub">Life, Gender, Inclusivity, and Leadership for the Future</span>
+              </div>
+              <figcaption>A preview of the title page. Katherine writes the real one by hand.</figcaption>
+            </figure>
+          </form>
+        </div>
+      </div>
     </div>
-    <h3 style="margin: clamp(2.4rem, 5vw, 3.6rem) 0 0.4rem">Buy from a bookseller</h3>
-    <ul class="retailers" aria-label="Booksellers">
-      <li><a href="https://www.amazon.com/Sincerely-Katherine-Gender-Inclusivity-Leadership/dp/1774586924/">Amazon</a></li>
-      <li><a href="https://www.amazon.ca/Sincerely-Katherine-Gender-Inclusivity-Leadership/dp/1774586924/">Amazon.ca</a></li>
-      <li><a href="https://www.indigo.ca/en-ca/sincerely-katherine.-life-gender-inclusivity-and-leadership-for-the-future/9781774586921.html">Indigo</a></li>
-      <li><a href="https://www.barnesandnoble.com/w/sincerely-katherine-katherine-dudtschak/1147243660">Barnes &amp; Noble</a></li>
-      <li><a href="https://bookshop.org/p/books/sincerely-katherine-life-gender-inclusivity-and-leadership-for-the-future-katherine-dudtschak/a5ffb2f61d99d850">Bookshop.org</a></li>
-      <li><a href="https://www.porchlightbooks.com/products/sincerely-katherine-katherine-dudtschak-9781774586921">Porchlight</a></li>
-      <li><a href="https://www.booksamillion.com/p/Sincerely-Katherine/Katherine-Dudtschak/9781774586921">Books-A-Million</a></li>
-    </ul>
+
+    <dl class="colophon" aria-label="Book details">
+      <div><dt>Publisher</dt><dd>Page Two Books</dd></div>
+      <div><dt>Published</dt><dd>March 31, 2026</dd></div>
+      <div><dt>Paperback</dt><dd>248 pages, 5.5 by 8.5 inches</dd></div>
+      <div><dt>Audiobook</dt><dd>6 hours 13 minutes</dd></div>
+      <div><dt>ISBN</dt><dd>978-1-77458-692-1</dd></div>
+    </dl>
   </div>
 </section>
 
-<section class="band band--rose" id="readers" aria-labelledby="readers-title">
+<section class="band band--plum" aria-labelledby="seed-title">
   <div class="wrap">
-    <h2 id="readers-title" style="margin-bottom: clamp(1.8rem, 4vw, 3rem)">Words from readers</h2>
-    <div class="quotes quotes--wall">
-      <blockquote class="quote quote--lead">
-        <p>&ldquo;One of the most sacred experiences a human being can navigate during their lifetime is a deep communion with their true self. This is far from an easy task. Katherine Dudtschak is a shining example of courage and authenticity as she redefined the notion of true leadership along the way in both her personal and professional life. Her story might not be yours, but don’t be fooled, its lessons are universally ours.&rdquo;</p>
-        <cite>Sophie Gr&eacute;goire Trudeau, global speaker and bestselling author of <em>Closer Together</em></cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;This book is a tender and transformative contribution to a more compassionate world.&rdquo;</p>
-        <cite>Dr. Robyne Hanley-Dafoe, author of <em>Calm Within the Storm</em> and <em>Stress Wisely</em></cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;She shares her life experiences so that others can gain a deeper understanding that while there may be differences among us, together we can move toward a brighter future based on kindness, inclusivity, and positive change.&rdquo;</p>
-        <cite>Phil Fontaine, former National Chief of the Assembly of First Nations</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;Katherine’s story is a triumph of courage, authenticity and love.&rdquo;</p>
-        <cite>Colleen Johnston, philanthropist and former CFO of TD Bank</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;I highly recommend <em>Sincerely, Katherine.</em> for not only Katherine’s generous sharing of her experience, but also her reflections on how inclusive leadership can have a fundamental impact on individuals, organizations, and society.&rdquo;</p>
-        <cite>Anthony Ostler, President and CEO, Canadian Bankers Association</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;The prose is direct, empathetic, and unflinching.&rdquo;</p>
-        <cite>Foreword Clarion Reviews</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>&ldquo;Katherine powerfully and elegantly cuts through delusions and gently uses her genius to engage us into a new state of thought.&rdquo;</p>
-        <cite>Patricia K Gagic, international artist and author</cite>
-      </blockquote>
+    <div class="split split--top">
+      <div class="split__copy">
+        <h2 id="seed-title">The seed of something larger</h2>
+      </div>
+      <div class="split__copy">
+        <p class="lede">When Katherine finished writing this book, something unexpected happened.</p>
+        <p>In telling her own story, she realized she was not alone. That millions of people were walking their own quiet journeys from hiding to wholeness. That everyone carries a story of becoming, whether they have words for it yet or not.</p>
+        <p>And she understood that what the world needed was not just her story, but somewhere for all these stories to be gathered. A home where the bright and beautiful accounts of humans finding their way could be collected, honoured, and shared.</p>
+        <p class="seed__built">So she built one. She called it Sincerely.</p>
+      </div>
+    </div>
+    <div class="shelfline" data-shelf>
+      <p class="shelfline__caption" data-shelf-caption>This book is the first story on shelves that will one day hold thousands.</p>
+      <div class="shelfline__books">
+        <a class="spine spine--memoir" href="#order" style="--thick: 46; --tall: 100" aria-label="The memoir: Sincerely, Katherine." data-caption="The memoir: Sincerely, Katherine. The first story on the shelf."><span>Sincerely, Katherine.</span></a>
+        <a class="spine spine--rose" href="show-katherine-dudtschak.html" style="--thick: 29; --tall: 80" aria-label="The welcome episode: The Woman Who Built Sincerely" data-caption="The welcome episode: The Woman Who Built Sincerely"><span>Katherine Dudtschak</span></a>
+        <a class="spine spine--lavender" href="show-amy-elizabeth-fox.html" style="--thick: 23; --tall: 86" aria-label="Conversation with Amy Elizabeth Fox: Bringing Love Into the Rooms Where Business Gets Done" data-caption="Conversation with Amy Elizabeth Fox: Bringing Love Into the Rooms Where Business Gets Done"><span>Amy Elizabeth Fox</span></a>
+        <a class="spine spine--rose" href="show-delphine-le-serre.html" style="--thick: 33; --tall: 86" aria-label="Conversation with Dr. Delphine Le Serre: Teaching Children Who They Already Are" data-caption="Conversation with Dr. Delphine Le Serre: Teaching Children Who They Already Are"><span>Delphine Le Serre</span></a>
+        <a class="spine spine--sage" href="show-sophie-gregoire.html" style="--thick: 26; --tall: 91" aria-label="Conversation with Sophie Grégoire: Your Heart Cannot Break. It Can Only Break Open" data-caption="Conversation with Sophie Grégoire: Your Heart Cannot Break. It Can Only Break Open"><span>Sophie Grégoire</span></a>
+        <a class="spine spine--lavender" href="show-dr-john-izzo.html" style="--thick: 34; --tall: 95" aria-label="Conversation with Dr. John Izzo: He Took It Further Than His Father. He Hopes We Take It Further Still." data-caption="Conversation with Dr. John Izzo: He Took It Further Than His Father. He Hopes We Take It Further Still."><span>John Izzo</span></a>
+        <a class="spine spine--sage" href="show-colin-campbell.html" style="--thick: 29; --tall: 94" aria-label="Conversation with Colin Campbell: Finding the Words: Working Through Profound Loss with Hope and Purpose" data-caption="Conversation with Colin Campbell: Finding the Words: Working Through Profound Loss with Hope and Purpose"><span>Colin Campbell</span></a>
+        <a class="spine spine--gold" href="show-joanna-barsh.html" style="--thick: 36; --tall: 88" aria-label="Conversation with Joanna Barsh: She Started Therapy at 72. She Has Never Been More Alive." data-caption="Conversation with Joanna Barsh: She Started Therapy at 72. She Has Never Been More Alive."><span>Joanna Barsh</span></a>
+        <a class="spine spine--rose" href="show-anne-marie-slaughter.html" style="--thick: 30; --tall: 89" aria-label="Conversation with Anne-Marie Slaughter: She Felt Fungible in Her Dream Job. That Was the Beginning." data-caption="Conversation with Anne-Marie Slaughter: She Felt Fungible in Her Dream Job. That Was the Beginning."><span>Anne-Marie Slaughter</span></a>
+        <a class="spine spine--lavender" href="show-eila-park-robertson.html" style="--thick: 29; --tall: 80" aria-label="Conversation with Eila Park Robertson: The Price of Peace Is Pain. There Is No Other Way Through." data-caption="Conversation with Eila Park Robertson: The Price of Peace Is Pain. There Is No Other Way Through."><span>Eila Park Robertson</span></a>
+        <a class="spine spine--sage" href="show-robyne-hanley-dafoe.html" style="--thick: 28; --tall: 93" aria-label="Conversation with Dr. Robyne Hanley-Dafoe: She exhaled in complete darkness and followed the bubbles home." data-caption="Conversation with Dr. Robyne Hanley-Dafoe: She exhaled in complete darkness and followed the bubbles home."><span>Robyne Hanley-Dafoe</span></a>
+        <a class="spine spine--rose" href="show-debra-poneman.html" style="--thick: 33; --tall: 85" aria-label="Conversation with Debra Poneman: She made a promise to the universe at thirteen, and she has kept it for sixty-one years." data-caption="Conversation with Debra Poneman: She made a promise to the universe at thirteen, and she has kept it for sixty-one years."><span>Debra Poneman</span></a>
+        <a class="spine spine--lavender" href="show-jem-fuller.html" style="--thick: 32; --tall: 87" aria-label="Conversation with Jem Fuller: Coherence Architect, Bringing Love Into the Workplace and Living From Essence" data-caption="Conversation with Jem Fuller: Coherence Architect, Bringing Love Into the Workplace and Living From Essence"><span>Jem Fuller</span></a>
+        <a class="spine spine--sage" href="show-master-mingtong-gu.html" style="--thick: 31; --tall: 93" aria-label="Conversation with Master Mingtong Gu: Coming Home to the Body, the Ground of All Healing" data-caption="Conversation with Master Mingtong Gu: Coming Home to the Body, the Ground of All Healing"><span>Mingtong Gu</span></a>
+        <a class="spine spine--gold" href="show-tom-lenoble.html" style="--thick: 30; --tall: 85" aria-label="Conversation with Tom LeNoble: Every Storm Leaves Fertile Ground to Plant" data-caption="Conversation with Tom LeNoble: Every Storm Leaves Fertile Ground to Plant"><span>Tom LeNoble</span></a>
+        <a class="spine spine--rose" href="show-florence-shaffer.html" style="--thick: 32; --tall: 96" aria-label="Conversation with Florence Shaffer: What if the real innovation is you? Building a coherent life before the collapse" data-caption="Conversation with Florence Shaffer: What if the real innovation is you? Building a coherent life before the collapse"><span>Florence Shaffer</span></a>
+        <a class="spine spine--lavender" href="show-chip-conley.html" style="--thick: 28; --tall: 93" aria-label="Conversation with Chip Conley: From Return on Investment to the Ripple of Impact" data-caption="Conversation with Chip Conley: From Return on Investment to the Ripple of Impact"><span>Chip Conley</span></a>
+        <a class="spine spine--letter" href="letter-never-alone.html" style="--thick: 17; --tall: 62" aria-label="8 Sep 2026, letter: Never Alone." data-caption="Letter, September 8, 2026: Never Alone."><span>8 Sep</span></a>
+        <a class="spine spine--sage" href="show-jennifer-hill.html" style="--thick: 27; --tall: 93" aria-label="Conversation with Jennifer Hill: The Spark of Light in Every Human We Meet" data-caption="Conversation with Jennifer Hill: The Spark of Light in Every Human We Meet"><span>Jennifer Hill</span></a>
+        <a class="spine spine--letter" href="letter-lessons-of-peter-pumpkinhead.html" style="--thick: 17; --tall: 71" aria-label="15 Sep 2026, letter: Lessons of Peter Pumpkinhead." data-caption="Letter, September 15, 2026: Lessons of Peter Pumpkinhead."><span>15 Sep</span></a>
+        <a class="spine spine--gold" href="show-eric-farewell.html" style="--thick: 27; --tall: 95" aria-label="Conversation with Eric Farewell: Becoming a Billionaire in Time, and Building a Life Around Love" data-caption="Conversation with Eric Farewell: Becoming a Billionaire in Time, and Building a Life Around Love"><span>Eric Farewell</span></a>
+        <a class="spine spine--letter" href="letter-a-melody-of-unconditional-beauty.html" style="--thick: 17; --tall: 71" aria-label="22 Sep 2026, letter: A melody of unconditional beauty." data-caption="Letter, September 22, 2026: A melody of unconditional beauty."><span>22 Sep</span></a>
+        <a class="spine spine--rose" href="show-melissa-bernstein.html" style="--thick: 33; --tall: 88" aria-label="Conversation with Melissa Bernstein: Turning the Chaos Within Into Light, One Life at a Time" data-caption="Conversation with Melissa Bernstein: Turning the Chaos Within Into Light, One Life at a Time"><span>Melissa Bernstein</span></a>
+        <a class="spine spine--letter" href="letter-we-love-and-live-on-a-life-lived-sincerely.html" style="--thick: 17; --tall: 63" aria-label="29 Sep 2026, letter: We love and live on: a life lived sincerely." data-caption="Letter, September 29, 2026: We love and live on: a life lived sincerely."><span>29 Sep</span></a>
+        <a class="spine spine--lavender" href="show-carlos-delgados-and-craig-alexander.html" style="--thick: 23; --tall: 91" aria-label="Conversation with Carlos Delgado and Craig Alexander: He hands young artists in the mountains a canvas, and calls that dignity." data-caption="Conversation with Carlos Delgado and Craig Alexander: He hands young artists in the mountains a canvas, and calls that dignity."><span>Delgado &amp; Alexander</span></a>
+        <a class="spine spine--letter" href="letter-an-exchange-of-love.html" style="--thick: 17; --tall: 66" aria-label="6 Oct 2026, letter: An exchange of love." data-caption="Letter, October 6, 2026: An exchange of love."><span>6 Oct</span></a>
+        <a class="spine spine--lavender" href="show-patricia-gagic.html" style="--thick: 33; --tall: 89" aria-label="Conversation with Patricia Gagic: In Gray Is Where All Potential Waits" data-caption="Conversation with Patricia Gagic: In Gray Is Where All Potential Waits"><span>Patricia Gagic</span></a>
+        <a class="spine spine--letter" href="letter-is-this-me.html" style="--thick: 17; --tall: 62" aria-label="13 Oct 2026, letter: Is this me?" data-caption="Letter, October 13, 2026: Is this me?"><span>13 Oct</span></a>
+        <a class="spine spine--sage" href="show-micky-hoogendijk.html" style="--thick: 31; --tall: 82" aria-label="Conversation with Micky Hoogendijk: Vulnerability Is the Strength, and the Art of Creating Space to Move Forward" data-caption="Conversation with Micky Hoogendijk: Vulnerability Is the Strength, and the Art of Creating Space to Move Forward"><span>Micky Hoogendijk</span></a>
+        <a class="spine spine--letter" href="letter-sacred.html" style="--thick: 17; --tall: 64" aria-label="20 Oct 2026, letter: Sacred." data-caption="Letter, October 20, 2026: Sacred."><span>20 Oct</span></a>
+        <a class="spine spine--gold" href="show-judy-wicks.html" style="--thick: 28; --tall: 88" aria-label="Conversation with Judy Wicks: Building the Beloved Community, One Fort at a Time" data-caption="Conversation with Judy Wicks: Building the Beloved Community, One Fort at a Time"><span>Judy Wicks</span></a>
+        <a class="spine spine--letter" href="letter-human-uniqueness.html" style="--thick: 17; --tall: 68" aria-label="27 Oct 2026, letter: Human Uniqueness." data-caption="Letter, October 27, 2026: Human Uniqueness."><span>27 Oct</span></a>
+        <a class="spine spine--rose" href="show-john-abbott.html" style="--thick: 34; --tall: 84" aria-label="Conversation with John Abbott: The Perfection in the Perceived Imperfection" data-caption="Conversation with John Abbott: The Perfection in the Perceived Imperfection"><span>John Abbott</span></a>
+        <a class="spine spine--letter" href="letter-running-away-from-home.html" style="--thick: 17; --tall: 65" aria-label="3 Nov 2026, letter: Running away from home…" data-caption="Letter, November 3, 2026: Running away from home…"><span>3 Nov</span></a>
+        <a class="spine spine--lavender" href="show-leah-thomas.html" style="--thick: 24; --tall: 86" aria-label="Conversation with Leah Thomas: How We Treat the Earth Mirrors How We Treat Each Other" data-caption="Conversation with Leah Thomas: How We Treat the Earth Mirrors How We Treat Each Other"><span>Leah Thomas</span></a>
+        <a class="spine spine--letter" href="letter-the-black-sheep.html" style="--thick: 17; --tall: 63" aria-label="10 Nov 2026, letter: The black sheep." data-caption="Letter, November 10, 2026: The black sheep."><span>10 Nov</span></a>
+      </div>
+    </div>
+    <div class="seed__after">
+      <p>The memoir, 25 conversations and 10 letters so far. Every conversation on The Sincerely Show, every letter Katherine writes, every gathering at the farm grows from the seed planted here.</p>
+      <div class="actions">
+        <a class="btn btn--light" href="library.html">Enter the Library</a>
+        <a class="btn btn--ghost" href="show.html">Watch the show</a>
+        <a class="btn btn--ghost" href="letters.html">Read the letters</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--parchment" aria-labelledby="author-title">
+  <div class="wrap author">
+    <a class="video" href="https://www.youtube.com/watch?v=WHUoJsvY7tU" data-video="WHUoJsvY7tU" style="view-transition-name: video-katherine-dudtschak" aria-label="Play the video: Katherine Dudtschak on The Sincerely Show"><img src="assets/img/video/katherine-dudtschak.webp" alt="" width="960" height="540" loading="lazy"><span class="video__play">Watch Katherine tell it</span></a>
+    <div class="split__copy">
+      <h2 id="author-title">About the author</h2>
+      <p class="lede">Katherine Dudtschak grew up on a small Ontario farm, the daughter of German immigrants whose lives had been shaped by war and displacement. Her memoir explores belonging and the freedom of coming home to oneself.</p>
+      <p>In 2019, while serving as a senior executive at RBC, Katherine affirmed her gender to 80,000 colleagues. People responded with compassion and began entrusting her with stories of their own, often revealing parts of themselves they had hidden for fear of rejection.</p>
+      <p>A mother of four, she lives at Maison Millefleurs, her lavender and honeybee farm in Prince Edward County, Ontario.</p>
+      <div class="actions">
+        <a class="btn btn--line" href="katherine.html">Read Katherine’s story</a>
+        <a class="btn btn--line" href="speaking.html">Invite her to speak</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="band" aria-labelledby="together-title">
-  <div class="wrap cards cards--2">
-    <div class="card card--mist">
-      <h2 id="together-title" class="h3">Read together</h2>
-      <p>This book was written to be shared. A discussion guide is available for book clubs, leadership circles and gatherings of friends. For groups of ten or more, Katherine may be able to join you virtually.</p>
+  <div class="wrap pair">
+    <div class="pair__col" id="together">
+      <h2 id="together-title" class="h3">This book was written to be shared.</h2>
+      <p>If your book club, leadership circle, or gathering of friends would like to read <em>Sincerely, Katherine.</em> together, there is a discussion guide to deepen the conversation. And for groups of ten or more, Katherine may be able to join you virtually to answer questions and explore the themes together.</p>
+      <blockquote class="pair__quote">
+        <p>&ldquo;We sat in the gazebo, exploring the many questions that had emerged as the women read <em>Sincerely, Katherine.</em>&rdquo;</p>
+        <cite>From Katherine’s letter of October 6, <a href="letter-an-exchange-of-love.html">An exchange of love.</a></cite>
+      </blockquote>
       <div class="actions"><a class="btn btn--line" href="work.html#conversation">Ask about a book club visit</a></div>
     </div>
-    <div class="card card--sage">
+    <div class="pair__col" id="press">
       <h2 class="h3">Press and media</h2>
-      <p>Members of the press are welcome to request review copies, interviews and background materials about the book and about Katherine.</p>
-      <div class="actions"><a class="btn btn--line" href="speaking.html#invite">Send a media request</a></div>
+      <p>Members of the press are welcome to request review copies, interviews, and additional materials.</p>
+      <ul class="presslist" aria-label="The book in the press">
+        <li><a href="https://zoomer.com/zed-book-club/shelf-life/2026/03/31/dear-fellow-executives"><strong>Zoomer</strong><span>Dear Fellow Executives, a profile by Shanda Deziel</span></a></li>
+        <li><a href="https://www.forewordreviews.com/reviews/sincerely-katherine/"><strong>Foreword Clarion Reviews</strong><span>A review by Carolyn Wilson-Scott</span></a></li>
+        <li><a href="https://miramichireader.ca/2026/04/sincerely-katherine-life-gender-inclusivity-and-leadership-for-the-future-by-katherine-dudtschak/"><strong>The Miramichi Reader</strong><span>A review by Pearl Pirie</span></a></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn--line" href="https://sincerelyinc.com/wp-content/uploads/2026/04/Sincerely-Katherine_info-sheet_Serif_Spring-2026_v5.pdf">Download the press kit</a>
+        <a class="btn btn--line" href="speaking.html#invite">Send a media request</a>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="band band--night closing" aria-label="A closing word">
+  <div class="wrap">
+    <p class="closing__lines"><span>Every book finds its reader.</span> <span>Every story finds its home.</span> <span>Perhaps this one has found you.</span></p>
+    <div class="actions"><a class="btn btn--light" href="#order">Order a copy</a></div>
   </div>
 </section>
 </main>
