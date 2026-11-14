@@ -43,29 +43,142 @@
     if (event.key === 'Escape') closeMenus(null);
   });
 
-  // ---------- The sign-off: "Sincerely, Katherine." / "Human." / "yours." ----------
+  // ---------- The home page's opening ----------
+  // The sign-off turns: "Sincerely, Katherine." / "Human." / "yours." On the home page the picture,
+  // the words under it and the buttons turn with it, so each word opens onto a part of the institute.
 
   var word = document.querySelector('.signoff__word');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (word && !reduceMotion) {
+  var still = false; // "Pause the motion" sets this.
+
+  if (word) {
+    var hero = word.closest('[data-hero]');
     var words = (word.getAttribute('data-words') || '').split('|').filter(Boolean);
+    var parts = hero ? hero.querySelectorAll('[data-state]') : [];
+    var picks = hero ? hero.querySelectorAll('[data-go]') : [];
     var index = 0;
+    var held = false;
+    var turning = null;
+
+    var turn = function (next) {
+      if (next === index) return;
+      index = next;
+      parts.forEach(function (part) {
+        part.classList.toggle('is-on', Number(part.getAttribute('data-state')) === index);
+      });
+      picks.forEach(function (pick) {
+        var on = Number(pick.getAttribute('data-go')) === index;
+        pick.classList.toggle('is-on', on);
+        pick.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      if (reduceMotion) {
+        word.textContent = words[index];
+        return;
+      }
+      word.classList.add('is-leaving');
+      setTimeout(function () {
+        word.textContent = words[index];
+        word.classList.remove('is-leaving');
+        word.classList.add('is-entering');
+        // Force a reflow so the entering position applies before the transition runs.
+        void word.offsetWidth;
+        word.classList.remove('is-entering');
+      }, 450);
+    };
+
     if (words.length > 1) {
-      setInterval(function () {
-        if (document.hidden) return;
-        word.classList.add('is-leaving');
-        setTimeout(function () {
-          index = (index + 1) % words.length;
-          word.textContent = words[index];
-          word.classList.remove('is-leaving');
-          word.classList.add('is-entering');
-          // Force a reflow so the entering position applies before the transition runs.
-          void word.offsetWidth;
-          word.classList.remove('is-entering');
-        }, 450);
-      }, 3200);
+      if (hero) {
+        var picker = hero.querySelector('.hero__picker');
+        if (picker) picker.hidden = false;
+        picks.forEach(function (pick) {
+          pick.addEventListener('click', function () {
+            // Once someone chooses for themselves, it stops turning by itself.
+            clearInterval(turning);
+            turn(Number(pick.getAttribute('data-go')));
+          });
+        });
+        // It waits while someone is reading the words or reaching for a button.
+        var reading = hero.querySelector('.hero__text');
+        if (reading) {
+          reading.addEventListener('pointerenter', function () { held = true; });
+          reading.addEventListener('pointerleave', function () { held = false; });
+          reading.addEventListener('focusin', function () { held = true; });
+          reading.addEventListener('focusout', function () { held = false; });
+        }
+      }
+      if (!reduceMotion) {
+        turning = setInterval(function () {
+          if (document.hidden || held || still) return;
+          turn((index + 1) % words.length);
+        }, 5600);
+      }
     }
   }
+
+  // ---------- "Pause the motion": everything that moves by itself holds still ----------
+
+  document.querySelectorAll('[data-motion]').forEach(function (button) {
+    if (reduceMotion) {
+      // Nothing is moving, so there is nothing to pause.
+      button.hidden = true;
+      return;
+    }
+    button.addEventListener('click', function () {
+      still = !still;
+      document.documentElement.classList.toggle('is-still', still);
+      button.setAttribute('aria-pressed', still ? 'true' : 'false');
+      button.textContent = still ? 'Play the motion' : 'Pause the motion';
+    });
+  });
+
+  // ---------- The guests' names: the moving line stops and becomes a row to scroll when the keyboard reaches it ----------
+
+  document.querySelectorAll('.ribbon').forEach(function (ribbon) {
+    ribbon.addEventListener('focusin', function (event) {
+      ribbon.classList.add('is-still');
+      if (event.target.scrollIntoView) event.target.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+    ribbon.addEventListener('focusout', function (event) {
+      if (ribbon.contains(event.relatedTarget)) return;
+      ribbon.classList.remove('is-still');
+      ribbon.scrollLeft = 0;
+    });
+  });
+
+  // ---------- A video can open over the page ("Watch her speak") ----------
+
+  document.querySelectorAll('a[data-reel]').forEach(function (link) {
+    // Where the browser has no dialog, the link simply goes to Vimeo.
+    if (typeof document.createElement('dialog').showModal !== 'function') return;
+    link.addEventListener('click', function (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      event.preventDefault();
+      var dialog = document.createElement('dialog');
+      dialog.className = 'lightbox';
+      dialog.setAttribute('aria-label', 'Katherine Dudtschak speaking');
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'lightbox__close';
+      close.textContent = 'Close the video';
+      var frame = document.createElement('div');
+      frame.className = 'lightbox__frame';
+      var player = document.createElement('iframe');
+      player.src = 'https://player.vimeo.com/video/' + link.getAttribute('data-reel') + '?autoplay=1&dnt=1&title=0&byline=0&portrait=0';
+      player.title = 'Katherine Dudtschak speaking';
+      player.allow = 'autoplay; fullscreen; picture-in-picture';
+      player.allowFullscreen = true;
+      frame.appendChild(player);
+      dialog.appendChild(close);
+      dialog.appendChild(frame);
+      document.body.appendChild(dialog);
+      close.addEventListener('click', function () { dialog.close(); });
+      // A press on the dark surround closes it too.
+      dialog.addEventListener('click', function (press) { if (press.target === dialog) dialog.close(); });
+      // Closing removes the player, which stops the sound.
+      dialog.addEventListener('close', function () { dialog.remove(); });
+      dialog.showModal();
+    });
+  });
 
   // ---------- Finding things: the show's episodes and the library ----------
 

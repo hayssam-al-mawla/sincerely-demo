@@ -1497,6 +1497,116 @@ main:has(> .closing:last-child) + .site-footer { padding-top: clamp(20px, 3vw, 4
 /* Her reel's own title sits low in the frame, so its play button goes to the top. */
 .video--top .video__play { bottom: auto; top: clamp(12px, 2vw, 22px); }
 
+/* Home: the opening turns with its sign-off. "Katherine." shows her, "Human." the research, "yours." the letters. */
+.hero--live { position: relative; padding-bottom: 0; }
+/* A soft light behind the picture. */
+.hero--live::before {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: min(78vw, 980px); aspect-ratio: 1; right: -14%; top: -16%;
+  background: radial-gradient(closest-side, rgba(194, 184, 207, 0.5), rgba(243, 225, 226, 0.34) 56%, rgba(247, 244, 239, 0) 100%);
+}
+/* Positioned, but with no z-index of its own: the watercolours inside still need to blend with the page behind. */
+.hero--live > .wrap { position: relative; }
+
+/* On a phone her picture comes straight after the sign-off, ahead of the words and buttons. */
+@media (max-width: 939px) {
+  .hero--live .hero__grid { gap: 0; }
+  .hero--live .hero__text { display: contents; }
+  .hero--live .signoff { order: 1; }
+  .hero--live .hero__stage { order: 2; width: min(82%, 350px); margin: 26px 0 0 4%; justify-self: start; }
+  .hero--live .hero__lede { order: 3; }
+  .hero--live .hero__states { order: 4; }
+  .hero--live .hero__picker { order: 5; }
+}
+/* On a tablet there is room for the picture beside the words again. */
+@media (min-width: 640px) and (max-width: 939px) {
+  .hero--live .hero__grid { grid-template-columns: 1.15fr 0.85fr; column-gap: 28px; }
+  .hero--live .signoff { grid-column: 1; font-size: 10.6vw; }
+  .hero--live .hero__lede, .hero--live .hero__states, .hero--live .hero__picker { grid-column: 1; }
+  .hero--live .hero__stage { grid-column: 2; grid-row: 1 / span 4; width: 100%; margin: 8px 0 0; align-self: start; }
+}
+
+.hero__states { display: grid; margin-top: 1rem; }
+.hero__state { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 0.45s, visibility 0s 0.45s; }
+.hero__state.is-on { opacity: 1; visibility: visible; transition: opacity 0.6s 0.2s, visibility 0s; }
+.hero__state p { max-width: 50ch; }
+.hero__state .actions { margin-top: 1.6rem; }
+
+.hero__picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 2.2rem; }
+.hero__picker[hidden] { display: none; }
+.hero__picker-label { font-family: var(--display); font-style: italic; font-size: 1.45rem; line-height: 1; color: var(--plum); }
+.hero__picker [role="group"] { display: flex; flex-wrap: wrap; gap: 6px; }
+.hero__picker .chip { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.1; padding: 0.3em 0.9em 0.38em; }
+.hero__pause { font: 500 0.82rem var(--body); color: var(--plum); background: none; border: 0; padding: 6px 0; margin-left: 6px; cursor: pointer; text-decoration: underline; text-decoration-color: var(--lavender-soft); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.hero__pause:hover { text-decoration-color: var(--plum); }
+.hero__pause[hidden] { display: none; }
+
+/* The three pictures share the arch and fade into one another. */
+.hero__pic { position: absolute; inset: 0; opacity: 0; transition: opacity 1s var(--ease); }
+.hero__pic.is-on { opacity: 1; }
+.hero__pic--art { background: var(--sage-soft); }
+.arch .hero__pic--art img { mix-blend-mode: multiply; object-fit: contain; object-position: 50% 46%; transform: scale(1.5); }
+.arch .hero__pic--desk img { object-position: 50% 80%; }
+.hero__stage figcaption { display: grid; }
+.hero__cap { grid-area: 1 / 1; opacity: 0; transition: opacity 0.5s; }
+.hero__cap.is-on { opacity: 1; transition: opacity 0.6s 0.2s; }
+
+/* Her reel, one press away. */
+.hero__play {
+  position: absolute; z-index: 4; right: -5%; bottom: 17%;
+  padding: 11px 22px 11px 64px; border-radius: 999px;
+  background: var(--plum); color: var(--cream); text-decoration: none;
+  box-shadow: 0 20px 40px -18px rgba(42, 33, 64, 0.75);
+  transition: background-color 0.18s;
+}
+.hero__play::before { content: ""; position: absolute; left: 10px; top: 50%; width: 42px; height: 42px; margin-top: -21px; border-radius: 50%; background: var(--cream); }
+.hero__play::after { content: ""; position: absolute; left: 27px; top: 50%; margin-top: -8px; border-left: 12px solid var(--plum); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.hero__play span { display: block; font: 600 0.95rem/1.2 var(--body); }
+.hero__play small { display: block; font: 500 0.78rem/1.3 var(--body); color: var(--lavender-soft); }
+.hero__play:hover { background: var(--lavender-ink); }
+@media (max-width: 939px) { .hero__play { right: auto; left: 6%; bottom: 27%; } }
+
+/* The newest conversation and the newest letter, along the foot of the opening. */
+.hero__now { display: grid; margin-top: clamp(34px, 5vw, 60px); border-top: 1px solid rgba(58, 47, 78, 0.14); }
+.now { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 16px; align-items: center; padding: 18px 0; text-decoration: none; color: var(--ink); }
+.now + .now { border-top: 1px solid rgba(58, 47, 78, 0.14); }
+.now img, .now__letter { width: 58px; height: 58px; border-radius: 12px; }
+.now__letter { display: grid; place-items: center; background: var(--paper); border: 1px solid rgba(58, 47, 78, 0.14); font: italic 2.1rem/1 var(--display); color: var(--rose-ink); }
+.now em { display: block; font-style: normal; font-weight: 600; font-size: 0.82rem; line-height: 1.4; color: var(--rose-ink); }
+.now em::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--gold); vertical-align: 1px; }
+.now strong { display: block; font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 1.6vw, 1.42rem); line-height: 1.2; color: var(--plum); margin-top: 2px; }
+.now:hover strong { text-decoration: underline; text-decoration-color: var(--rose); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+@media (min-width: 860px) {
+  .hero__now { grid-template-columns: 1.3fr 0.7fr; }
+  .now + .now { border-top: 0; border-left: 1px solid rgba(58, 47, 78, 0.14); padding-left: clamp(24px, 3vw, 44px); }
+}
+
+/* The guests' names in one moving line. Without motion it is a row to scroll sideways. */
+.guestline { background: var(--lavender-mist); padding-block: clamp(26px, 3.2vw, 42px) clamp(22px, 2.8vw, 36px); overflow: hidden; }
+.guestline .kicker { margin-bottom: 0.4rem; }
+.ribbon { display: flex; overflow-x: auto; scrollbar-width: none; }
+.ribbon::-webkit-scrollbar { display: none; }
+.ribbon__set { display: flex; flex: 0 0 auto; align-items: center; }
+.ribbon__set + .ribbon__set { display: none; }
+.ribbon a {
+  display: inline-flex; align-items: center; flex: 0 0 auto; gap: clamp(24px, 3vw, 44px);
+  padding-left: clamp(24px, 3vw, 44px);
+  font-family: var(--display); font-size: clamp(1.9rem, 3.7vw, 3.3rem); line-height: 1.3; letter-spacing: -0.012em;
+  white-space: nowrap; color: var(--plum); text-decoration: none;
+}
+.ribbon a::after { content: ""; flex: 0 0 auto; width: 0.44em; height: 0.44em; background: url(../img/mark-rose.png) center / contain no-repeat; }
+.ribbon a:nth-child(even) { font-style: italic; color: var(--lavender-ink); }
+.ribbon a:hover { color: var(--rose-ink); }
+
+/* A video opened over the page. */
+.lightbox { width: min(1100px, 92vw); max-width: none; padding: 0; border: 0; background: none; overflow: visible; }
+.lightbox::backdrop { background: rgba(42, 33, 64, 0.9); }
+.lightbox__frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8); }
+.lightbox__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.lightbox__close { display: block; margin: 0 0 14px auto; font: 600 0.92rem/1.2 var(--body); padding: 0.8em 1.4em; border-radius: 999px; border: 1.5px solid rgba(247, 244, 239, 0.6); background: none; color: var(--cream); cursor: pointer; }
+.lightbox__close:hover { background: var(--cream); color: var(--plum); }
+.lightbox :focus-visible { outline-color: var(--gold); }
+
 /* Home: the question the institute exists to ask. */
 .inquiry--light { color: var(--cream); max-width: 31ch; margin-top: 0; font-weight: 400; }
 .askband__foot { display: grid; gap: 20px 56px; align-items: center; margin-top: clamp(2rem, 4vw, 3.4rem); padding-top: clamp(1.6rem, 3vw, 2.4rem); border-top: 1px solid var(--rule); }
@@ -1517,20 +1627,48 @@ main:has(> .closing:last-child) + .site-footer { padding-top: clamp(20px, 3vw, 4
 @keyframes progress { to { transform: scaleX(1); } }
 @keyframes tome-turn { from { transform: rotateX(0deg) rotateY(0deg); } }
 @keyframes letter-rise { from { transform: translateY(96px) rotate(-1.4deg); } }
+@keyframes settle { from { transform: scale(1.09); } to { transform: scale(1); } }
+@keyframes settle-art { from { transform: scale(1.62); } to { transform: scale(1.5); } }
+@keyframes ribbon { to { transform: translateX(-100%); } }
+@keyframes beckon { 0% { box-shadow: 0 0 0 0 rgba(58, 47, 78, 0.45); } 70%, 100% { box-shadow: 0 0 0 16px rgba(58, 47, 78, 0); } }
+@keyframes glow { from { transform: translate(0, 0) scale(1); } to { transform: translate(-6%, 5%) scale(1.12); } }
+@keyframes fresh { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 @keyframes header-shadow { to { box-shadow: 0 12px 30px -20px rgba(58, 47, 78, 0.55); } }
 
 @media (prefers-reduced-motion: no-preference) {
   /* One orchestrated moment: the home page arrives in sequence, then a bee settles in. */
-  .hero .signoff__line, .hero .signoff__turn, .hero__lede, .hero__mission, .hero .actions, .hero .platforms, .hero .arch, .hero .portrait__sprig {
+  .hero .signoff__line, .hero .signoff__turn, .hero__lede, .hero__states, .hero__picker, .hero .arch, .hero .portrait__sprig, .hero__now {
     animation: rise 0.9s var(--ease) both;
   }
   .hero .signoff__turn { animation-delay: 0.12s; }
   .hero .arch { animation-delay: 0.2s; animation-duration: 1.1s; }
   .hero__lede { animation-delay: 0.32s; }
-  .hero__mission { animation-delay: 0.42s; }
-  .hero .actions { animation-delay: 0.52s; }
-  .hero .platforms { animation-delay: 0.62s; }
+  .hero__states { animation-delay: 0.42s; }
+  .hero__picker { animation-delay: 0.56s; }
   .hero .portrait__sprig { animation-delay: 0.75s; }
+  .hero__now { animation-delay: 0.9s; }
+  .hero__play { animation: rise 0.9s 1.1s var(--ease) both; }
+  /* The button for her reel beckons, quietly. */
+  .hero__play::before { animation: beckon 2.6s 2.4s ease-out infinite; }
+
+  /* Each picture settles as it arrives, and the light behind it drifts. */
+  .hero__pic.is-on img { animation: settle 8s ease-out both; }
+  .arch .hero__pic--art.is-on img { animation-name: settle-art; }
+  .hero--live::before { animation: glow 14s ease-in-out infinite alternate; }
+  .now em::before { animation: fresh 2.4s ease-in-out infinite; }
+
+  /* The guests' names run past; they wait while pointed at, and stop for the keyboard. */
+  .ribbon { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .ribbon__set + .ribbon__set { display: flex; }
+  .ribbon__set { animation: ribbon 95s linear infinite; }
+  .ribbon:hover .ribbon__set { animation-play-state: paused; }
+  .ribbon.is-still { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .ribbon.is-still .ribbon__set { animation: none; }
+  .ribbon.is-still .ribbon__set + .ribbon__set { display: none; }
+
+  /* "Pause the motion" holds everything that moves by itself. */
+  .is-still .ribbon__set, .is-still .filmstrip__track, .is-still .hero__pic img, .is-still .hero--live::before,
+  .is-still .hero__play::before, .is-still .now em::before, .is-still .portrait__bee { animation-play-state: paused; }
   .hero .portrait__bee { animation: rise 0.9s 1s both, hover-bee 7s ease-in-out 1.9s infinite; }
 
   /* The memoir page has one too: the title arrives, and the book turns to show its pages. */
